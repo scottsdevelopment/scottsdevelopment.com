@@ -7,6 +7,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from datetime import datetime
 
+
 def add_hyperlink(paragraph, url, text, color="0000FF", underline=True):
     """
     Creates a hyperlink within a paragraph.
@@ -14,7 +15,7 @@ def add_hyperlink(paragraph, url, text, color="0000FF", underline=True):
     'url' is the URL (or mailto/tel link) to link to.
     'text' is the text displayed for the hyperlink.
     'color' defaults to blue ("0000FF"), and 'underline' defaults to True.
-    
+
     Returns the hyperlink object.
     """
     part = paragraph.part
@@ -52,7 +53,7 @@ def add_hyperlink(paragraph, url, text, color="0000FF", underline=True):
 
 def generate_new_resume(resume_data):
     """
-    Creates a new Word document with the resume content 
+    Creates a new Word document with the resume content
     and saves it as PersonName.Date.docx.
     Returns the name of the saved file.
     """
@@ -82,15 +83,15 @@ def generate_new_resume(resume_data):
     header_para.add_run(" | ")
 
     add_hyperlink(
-        header_para, 
-        f"tel:{resume_data['heading']['phone']}", 
+        header_para,
+        f"tel:{resume_data['heading']['phone']}",
         resume_data['heading']['phone']
     )
     header_para.add_run(" | ")
 
     add_hyperlink(
-        header_para, 
-        f"mailto:{resume_data['heading']['email']}", 
+        header_para,
+        f"mailto:{resume_data['heading']['email']}",
         resume_data['heading']['email']
     )
 
@@ -104,13 +105,14 @@ def generate_new_resume(resume_data):
     footer_para.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     footer_para.clear()
 
-    add_hyperlink(footer_para, resume_data['heading']['social_media'], resume_data['heading']['social_media'])
+    add_hyperlink(footer_para, resume_data['heading']
+                  ['social_media'], resume_data['heading']['social_media'])
 
     # 3) Define/Update Basic Styles
     # "Best practice" settings for a resume
     # Name (Heading 1): 20pt, Bold
     heading1_style = ensure_paragraph_style(
-        doc, 
+        doc,
         style_name='Resume Heading 1',
         font_name='Calibri',
         font_size=20,
@@ -120,7 +122,7 @@ def generate_new_resume(resume_data):
     )
     # Heading 2: 14pt, Bold
     heading2_style = ensure_paragraph_style(
-        doc, 
+        doc,
         style_name='Resume Heading 2',
         font_name='Calibri',
         font_size=14,
@@ -130,7 +132,7 @@ def generate_new_resume(resume_data):
     )
     # Heading 3: 12pt, Bold
     heading3_style = ensure_paragraph_style(
-        doc, 
+        doc,
         style_name='Resume Heading 3',
         font_name='Calibri',
         font_size=12,
@@ -140,7 +142,7 @@ def generate_new_resume(resume_data):
     )
     # Body: 11pt
     body_style = ensure_paragraph_style(
-        doc, 
+        doc,
         style_name='Resume Body',
         font_name='Calibri',
         font_size=11,
@@ -149,7 +151,7 @@ def generate_new_resume(resume_data):
     )
     # Bullets: 11pt
     bullet_style = ensure_paragraph_style(
-        doc, 
+        doc,
         style_name='List Bullet',
         font_name='Calibri',
         font_size=11,
@@ -193,7 +195,8 @@ def generate_new_resume(resume_data):
 
     for entry in resume_data["work_history"]:
         # Company & Location
-        company_para = doc.add_paragraph(entry["company"], style=heading3_style)
+        company_para = doc.add_paragraph(
+            entry["company"], style=heading3_style)
         if entry.get("location"):
             company_para.add_run(f", {entry['location']}")
 
@@ -283,8 +286,8 @@ if __name__ == "__main__":
           ]
       }
 
-    try:
-        synced_resume_path_2025 = generate_new_resume(resume_data_example)
-        print(f"Synced and formatted resume saved to: {synced_resume_path_2025}")
-    except Exception as e:
-        print(f"Error: {e}")
+try:
+    synced_resume_path_2025 = generate_new_resume(resume_data_example)
+    print(f"Synced and formatted resume saved to: {synced_resume_path_2025}")
+except Exception as e:
+    print(f"Error: {e}")
