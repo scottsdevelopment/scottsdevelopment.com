@@ -1,153 +1,133 @@
-< !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Scott's Development</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">< !-- Optional meta if you do not want search indexing yet: <meta name="robots" content="noindex,nofollow" />--><link rel="icon" href="images/scott-favicon.png" type="image/png"><style>
-
-/* ----------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scott's Development</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Optional meta if you do not want search indexing yet: 
+       <meta name="robots" content="noindex,nofollow" />
+  -->
+  <link rel="icon" href="images/scott-favicon.png" type="image/png">
+  <style>
+    /* ----------------------------------
        1) BASE & RESET
     ---------------------------------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    }
+    body {
+      font-family: "Open Sans", Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+      font-weight: 300;
+      min-height: 100vh;
+      position: relative;
+    }
+    a {
+      color: #6F42C1;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #5d36a3;
+    }
+    ul, li {
+      list-style: none;
+    }
 
-html {
-  scroll-behavior: smooth;
-  /* Smooth scrolling for anchor links */
-}
+    /* For printing, optionally hide the hero or reduce big images */
+    @media print {
+      .hero {
+        display: none;
+      }
+      footer {
+        display: none;
+      }
+    }
 
-body {
-  font-family: "Open Sans", Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #222;
-  line-height: 1.6;
-  font-weight: 300;
-  min-height: 100vh;
-  position: relative;
-}
-
-a {
-  color: #6F42C1;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: #5d36a3;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-/* For printing, optionally hide the hero or reduce big images */
-@media print {
-  .hero {
-    display: none;
-  }
-
-  footer {
-    display: none;
-  }
-}
-
-/* ----------------------------------
+    /* ----------------------------------
        2) ANIMATIONS & KEYFRAMES
     ---------------------------------- */
-@keyframes heroGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Optional flicker effect for brand heading
+    @keyframes heroGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* Optional flicker effect for brand heading
     @keyframes flicker {
       0%,100% { opacity: 1; }
       50% { opacity: 0.8; }
     }
     */
-@keyframes bounceArrow {
-  0% {
-    transform: translate(-50%, 0);
-  }
+    @keyframes bounceArrow {
+      0% { transform: translate(-50%, 0); }
+      100% { transform: translate(-50%, 6px); }
+    }
 
-  100% {
-    transform: translate(-50%, 6px);
-  }
-}
-
-/* ----------------------------------
+    /* ----------------------------------
        3) HERO SECTION
     ---------------------------------- */
-.hero {
-  background: linear-gradient(135deg, #4e00c2 0%, #a700d1 100%);
-  background-size: 200% 200%;
-  animation: heroGradient 15s ease infinite;
-  color: #fff;
-  text-align: center;
-  padding: 4rem 1rem;
-  margin-bottom: 2rem;
-  position: relative;
-  overflow: hidden;
-}
+    .hero {
+      background: linear-gradient(135deg, #4e00c2 0%, #a700d1 100%);
+      background-size: 200% 200%;
+      animation: heroGradient 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      /* animation: flicker 2s infinite alternate; (optional) */
+    }
+    .hero p.tagline {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0.5rem auto 0;
+    }
+    .hero p.subtag {
+      font-size: 1rem;
+      color: #fff;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+    .hero a.btn-download {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: #6F42C1;
+      color: #fff;
+      padding: 0.6em 1em;
+      border-radius: 4px;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .hero a.btn-download:hover {
+      box-shadow: 0 0 10px #fff, 0 0 20px #d100ff;
+    }
+    /* Scroll-down indicator arrow */
+    .scroll-down {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      width: 24px; 
+      height: 24px;
+      background: url("data:image/svg+xml,<svg fill='%23fff' xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 4v16m0 0-6-6m6 6 6-6' stroke='%23fff' stroke-width='2' fill='none'/></svg>") no-repeat center/cover;
+      transform: translateX(-50%);
+      animation: bounceArrow 1.5s infinite alternate;
+    }
 
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  /* animation: flicker 2s infinite alternate; (optional) */
-}
-
-.hero p.tagline {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0.5rem auto 0;
-}
-
-.hero p.subtag {
-  font-size: 1rem;
-  color: #fff;
-  opacity: 0.9;
-  margin-top: 0.25rem;
-}
-
-.hero a.btn-download {
-  display: inline-block;
-  margin-top: 1.5rem;
-  background: #6F42C1;
-  color: #fff;
-  padding: 0.6em 1em;
-  border-radius: 4px;
-  position: relative;
-  transition: box-shadow 0.2s;
-}
-
-.hero a.btn-download:hover {
-  box-shadow: 0 0 10px #fff, 0 0 20px #d100ff;
-}
-
-/* Scroll-down indicator arrow */
-.scroll-down {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  background: url("data:image/svg+xml,<svg fill='%23fff' xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 4v16m0 0-6-6m6 6 6-6' stroke='%23fff' stroke-width='2' fill='none'/></svg>") no-repeat center/cover;
-  transform: translateX(-50%);
-  animation: bounceArrow 1.5s infinite alternate;
-}
-
-/* Logo if needed 
+    /* Logo if needed 
     .hero .logo-scott {
       position: absolute;
       top: 1rem; left: 1rem;
@@ -156,402 +136,467 @@ li {
     }
     */
 
-/* ----------------------------------
+    /* ----------------------------------
        4) CONTAINER & SECTIONS
     ---------------------------------- */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  /* Wider container for big screens */
-  margin: 0 auto 2rem;
-}
+    .container {
+      width: 90%;
+      max-width: 1200px; /* Wider container for big screens */
+      margin: 0 auto 2rem;
+    }
+    .gradient-hr {
+      border: 0;
+      height: 4px;
+      background: linear-gradient(to right, #4e00c2, #a700d1);
+      border-radius: 2px;
+      margin: 2rem 0;
+    }
 
-.gradient-hr {
-  border: 0;
-  height: 4px;
-  background: linear-gradient(to right, #4e00c2, #a700d1);
-  border-radius: 2px;
-  margin: 2rem 0;
-}
+    section {
+      background: rgba(255,255,255,0.95); /* mild transparency if desired */
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 6px;
+      transition: box-shadow 0.3s, transform 0.3s;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 14px rgba(0,0,0,0.2);
+    }
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #6F42C1;
+      font-weight: 500;
+    }
 
-section {
-  background: rgba(255, 255, 255, 0.95);
-  /* mild transparency if desired */
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 6px;
-  transition: box-shadow 0.3s, transform 0.3s;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
-}
-
-section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #6F42C1;
-  font-weight: 500;
-}
-
-/* ----------------------------------
+    /* ----------------------------------
        5) ABOUT SCOTT
     ---------------------------------- */
-.about-scott {
-  position: relative;
-  min-height: 250px;
-  overflow: hidden;
-}
+    .about-scott {
+      position: relative;
+      min-height: 250px;
+      overflow: hidden;
+    }
+    .about-scott::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 200%;
+      background: #6F42C1;
+      opacity: 0.1;
+      z-index: 0;
+      transform: translateY(-50%);
+    }
+    .about-scott .content {
+      position: relative;
+      z-index: 1;
+    }
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .col-left, .col-right {
+      flex: 1;
+      min-width: 200px;
+    }
+    .about-scott img {
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 767px) {
+      .columns { display: block; }
+    }
 
-.about-scott::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  background: #6F42C1;
-  opacity: 0.1;
-  z-index: 0;
-  transform: translateY(-50%);
-}
-
-.about-scott .content {
-  position: relative;
-  z-index: 1;
-}
-
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.col-left,
-.col-right {
-  flex: 1;
-  min-width: 200px;
-}
-
-.about-scott img {
-  max-width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 767px) {
-  .columns {
-    display: block;
-  }
-}
-
-/* ----------------------------------
+    /* ----------------------------------
        6) OS MENU
     ---------------------------------- */
-.os-menu {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+    .os-menu {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .os-btn {
+      background: linear-gradient(180deg, #e8e8e8, #ccc);
+      border: 1px solid #999;
+      padding: 0.6em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0 0.5em;
+      transition: background-color 0.2s, transform 0.1s, outline 0.2s;
+      outline: none;
+    }
+    .os-btn:hover {
+      background: linear-gradient(180deg, #f0f0f0, #ddd);
+    }
+    .os-btn:active {
+      transform: scale(0.95);
+    }
+    .os-btn.active-btn {
+      background: linear-gradient(135deg, #6F42C1, #b76df2);
+      color: #fff;
+      border-color: #6F42C1;
+      position: relative;
+    }
+    .os-btn.active-btn:hover {
+      outline: 1px solid #b76df2; /* Subtle outline on hover (11) */
+      outline-offset: -3px;
+    }
 
-.os-btn {
-  background: linear-gradient(180deg, #e8e8e8, #ccc);
-  border: 1px solid #999;
-  padding: 0.6em 1em;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 0 0.5em;
-  transition: background-color 0.2s, transform 0.1s, outline 0.2s;
-  outline: none;
-}
+    /* OS sections hidden by default */
+    .os-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .os-section.active {
+      display: block;
+      opacity: 1;
+    }
 
-.os-btn:hover {
-  background: linear-gradient(180deg, #f0f0f0, #ddd);
-}
-
-.os-btn:active {
-  transform: scale(0.95);
-}
-
-.os-btn.active-btn {
-  background: linear-gradient(135deg, #6F42C1, #b76df2);
-  color: #fff;
-  border-color: #6F42C1;
-  position: relative;
-}
-
-.os-btn.active-btn:hover {
-  outline: 1px solid #b76df2;
-  /* Subtle outline on hover (11) */
-  outline-offset: -3px;
-}
-
-/* OS sections hidden by default */
-.os-section {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.os-section.active {
-  display: block;
-  opacity: 1;
-}
-
-/* ----------------------------------
+    /* ----------------------------------
        7) CODE SNIPPETS & COPY
     ---------------------------------- */
-.copy-button {
-  background: #eee;
-  border: 1px solid #ccc;
-  padding: 0.3em 0.6em;
-  cursor: pointer;
-  font-size: 0.9rem;
-  border-radius: 4px;
-  margin-bottom: 0.5em;
-  transition: background-color 0.2s ease, box-shadow 0.2s;
-  position: relative;
-}
+    .copy-button {
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 0.3em 0.6em;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      margin-bottom: 0.5em;
+      transition: background-color 0.2s ease, box-shadow 0.2s;
+      position: relative;
+    }
+    .copy-button:hover {
+      background: #ddd;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* Clipboard icon on button */
+    .copy-button::before {
+      content: "📋 ";
+    }
 
-.copy-button:hover {
-  background: #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    .code-snippet {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: "Fira Code", monospace;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      transition: background-color 0.2s ease;
+      max-width: 1000px;
+      position: relative;
+    }
+    .code-snippet:hover {
+      background-color: #252525;
+    }
+    /* line numbering approach */
+    .code-snippet code {
+      display: block;
+      counter-reset: line;
+      white-space: pre;
+      padding-left: 2rem; 
+      position: relative;
+    }
+    .code-snippet code span {
+      display: block;
+      position: relative;
+      padding-left: 2rem; 
+    }
+    .code-snippet code span::before {
+      counter-increment: line;
+      content: counter(line);
+      position: absolute;
+      left: -2.5rem;
+      color: #888;
+      width: 2rem;
+      text-align: right;
+    }
 
-/* Clipboard icon on button */
-.copy-button::before {
-  content: "📋 ";
-}
+    /* optional color-coded syntax approach (very minimal) */
+    .comment { color: #999; }
+    .cmd { color: #00d700; }
+    .string { color: #ffbf00; }
 
-.code-snippet {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  padding: 1rem;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-family: "Fira Code", monospace;
-  font-size: 0.95rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: background-color 0.2s ease;
-  max-width: 1000px;
-  position: relative;
-}
-
-.code-snippet:hover {
-  background-color: #252525;
-}
-
-/* line numbering approach */
-.code-snippet code {
-  display: block;
-  counter-reset: line;
-  white-space: pre;
-  padding-left: 2rem;
-  position: relative;
-}
-
-.code-snippet code span {
-  display: block;
-  position: relative;
-  padding-left: 2rem;
-}
-
-.code-snippet code span::before {
-  counter-increment: line;
-  content: counter(line);
-  position: absolute;
-  left: -2.5rem;
-  color: #888;
-  width: 2rem;
-  text-align: right;
-}
-
-/* optional color-coded syntax approach (very minimal) */
-.comment {
-  color: #999;
-}
-
-.cmd {
-  color: #00d700;
-}
-
-.string {
-  color: #ffbf00;
-}
-
-/* ----------------------------------
+    /* ----------------------------------
        8) FAQ
     ---------------------------------- */
-details {
-  margin: 1em 0;
-  background: #fff;
-  padding: 1em;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
+    details {
+      margin: 1em 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 500;
+      color: #6F42C1;
+      outline: none;
+      list-style: none;
+    }
+    /* Expand all/collapse all link might be handled in JS */
 
-details summary {
-  cursor: pointer;
-  font-weight: 500;
-  color: #6F42C1;
-  outline: none;
-  list-style: none;
-}
-
-/* Expand all/collapse all link might be handled in JS */
-
-/* ----------------------------------
+    /* ----------------------------------
        9) FOOTER
     ---------------------------------- */
 footer {
-  background: #333;
-  /* Darker background */
-  color: #ccc;
-  /* Lighter text */
+  background: #333; /* Darker background */
+  color: #ccc;      /* Lighter text */
   text-align: center;
-  padding: 2rem 0;
-  /* More vertical padding */
-  width: 100%;
-  /* Full width */
+  padding: 2rem 0;  /* More vertical padding */
+  width: 100%;      /* Full width */
   font-size: 0.85rem;
-  margin-top: 4rem;
-  /* Extra space above the footer */
+  margin-top: 4rem; /* Extra space above the footer */
 }
 
-/* ----------------------------------
+    /* ----------------------------------
        10) JUMP TO TOP
     ---------------------------------- */
-.jump-top {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #6F42C1;
-  color: #fff;
-  padding: 0.3em 0.6em;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: box-shadow 0.2s ease;
-}
+    .jump-top {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #6F42C1;
+      color: #fff;
+      padding: 0.3em 0.6em;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: box-shadow 0.2s ease;
+    }
+    .jump-top:hover {
+      box-shadow: 0 0 10px #fff, 0 0 20px #d100ff;
+    }
 
-.jump-top:hover {
-  box-shadow: 0 0 10px #fff, 0 0 20px #d100ff;
-}
+  </style>
+</head>
+<body id="top">
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Scott's Development</h1>
+    <p class="tagline">Empowering Your Development Workflow—One Script at a Time</p>
+    <p class="subtag">Automate your tasks, streamline your processes, and generate your resume in seconds.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      Last updated: <span id="lastUpdated"></span>
+    </p>
+    <a href="https://github.com/scottsdevelopment/resume/raw/refs/heads/main/Scott.20241224.docx" download class="btn-download">Download Resume (DOCX)</a>
+  </div>
 
-</style></head><body id="top">< !-- Hero Section --><div class="hero"><h1>Scott's Development</h1>
- <p class="tagline">Empowering Your Development Workflow—One Script at a Time</p><p class="subtag">Automate your tasks,
-streamline your processes,
-and generate your resume in seconds.</p><p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Last updated: <span id="lastUpdated"></span></p><a href="https://github.com/scottsdevelopment/resume/raw/refs/heads/main/Scott.20241224.docx" download class="btn-download">Download Resume (DOCX)</a></div>< !-- Main Container --><div class="container">< !-- About Scott --><section class="about-scott"><div class="content columns"><div class="col-left"><h2>About Scott</h2><p>Scott is a developer building advanced <strong>automation</strong>solutions—Docker scripts,
-streaming integrations,
-and custom code that save you time and hassle. With quick,
-frictionless dev tools at your fingertips,
-you can focus on building great solutions,
-fast.</p><p>Stay tuned for new expansions: <strong>PDF generation</strong>for resumes,
-video tutorials,
-and more. Got ideas? <a href="https://github.com/scottsdevelopment/resume" target="_blank">Contribute on GitHub</a>or <a href="mailto:scott@scottsdevelopment.com">email Scott</a>.</p></div></div></section><hr class="gradient-hr"><p style="text-align:center;">Select your OS below or <a href="https://github.com/scottsdevelopment/resume/raw/refs/heads/main/Scott.20241224.docx" download>download the resume directly</a>. <br>(Don’t see your OS? <a href="#" >Contact us !</a>) </p>< !-- OS Buttons --><div class="os-menu"><button id="btnWindows" class="os-btn" onclick="showOs('windows')">Windows</button><button id="btnLinux" class="os-btn" onclick="showOs('linux')">Linux</button><button id="btnMac" class="os-btn" onclick="showOs('mac')">macOS</button></div>< !-- Windows Section --><section id="windowsSection" class="os-section"><h2>Windows (PowerShell)</h2><ul><li>Requires Python 3.7+installed on Windows.</li><li>Install <strong>python-docx</strong>via pip.</li><li>Download <strong>generate.py</strong>using Invoke-WebRequest.</li><li>Run the script &amp;
-open your newest Word doc automatically.</li></ul><button class="copy-button" onclick="copyCode('windowsCmd')">Copy</button><pre id="windowsCmd" class="code-snippet"><code><span class="comment"># 1) Install python-docx</span><span class="cmd">pip3 install python-docx</span><span class="comment"># 2) Download generate.py</span><span class="cmd">Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/scottsdevelopment/resume/refs/heads/main/generate.py" -OutFile "generate.py" </span><span class="comment"># 3) Execute & open newest Word doc</span><span class="cmd">python3 generate.py</span><span class="cmd">Start-Process ((Get-ChildItem *.docx | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName)</span></code></pre></section>< !-- Linux Section --><section id="linuxSection" class="os-section"><h2>Linux (Bash)</h2><ul><li>Tested on Ubuntu 22.04 &amp;
-Fedora 36.</li><li>Install <strong>python-docx</strong>via pip3.</li><li>Use <strong>curl</strong>to fetch generate.py.</li><li>Run the script,
-then xdg-open the docx file.</li></ul><button class="copy-button" onclick="copyCode('linuxCmd')">Copy</button><pre id="linuxCmd" class="code-snippet"><code><span class="comment"># 1) Install python-docx</span><span class="cmd">pip3 install python-docx</span><span class="comment"># 2) Download generate.py</span><span class="cmd">curl -s https: //raw.githubusercontent.com/scottsdevelopment/resume/refs/heads/main/generate.py -o generate.py</span>
+  <!-- Main Container -->
+  <div class="container">
 
-<span class="comment"># 3) Execute & open newest Word doc</span><span class="cmd">python3 generate.py</span><span class="cmd">xdg-open "$(ls -t *.docx | head -n1)" </span></code></pre></section>< !-- macOS Section --><section id="macSection" class="os-section"><h2>macOS (Bash/Zsh)</h2><ul><li>Install <strong>python-docx</strong>via Homebrew or python.org.</li><li>Use <strong>curl</strong>to retrieve generate.py from GitHub.</li><li>Run the script,
-then <strong>open</strong>the docx in Word or Pages.</li></ul><button class="copy-button" onclick="copyCode('macCmd')">Copy</button><pre id="macCmd" class="code-snippet"><code><span class="comment"># 1) Install python-docx</span><span class="cmd">pip3 install python-docx</span><span class="comment"># 2) Download generate.py</span><span class="cmd">curl -s https: //raw.githubusercontent.com/scottsdevelopment/resume/refs/heads/main/generate.py -o generate.py</span>
+    <!-- About Scott -->
+    <section class="about-scott">
+      <div class="content columns">
+        <div class="col-left">
+          <h2>About Scott</h2>
+          <p>Scott is a developer building advanced <strong>automation</strong> solutions—Docker scripts, streaming integrations, and custom code that save you time and hassle. With quick, frictionless dev tools at your fingertips, you can focus on building great solutions, fast.</p>
+          <p>Stay tuned for new expansions: <strong>PDF generation</strong> for resumes, video tutorials, and more. Got ideas? 
+             <a href="https://github.com/scottsdevelopment/resume" target="_blank">Contribute on GitHub</a> or 
+             <a href="mailto:scott@scottsdevelopment.com">email Scott</a>.</p>
+        </div>
+      </div>
+    </section>
 
-<span class="comment"># 3) Execute & open newest Word doc</span><span class="cmd">python3 generate.py</span><span class="cmd">open "$(ls -t *.docx | head -n1)" </span></code></pre></section>< !-- FAQ Section --><details><summary>FAQ: What if I don’t have Python 3 installed?</summary><p>You can install Python 3 on Windows via the Microsoft Store or python.org,
-on Linux via your distro’s package manager,
-and on macOS via Homebrew or the official installer.</p></details><details><summary>FAQ: Can I generate a PDF instead?</summary><p>Currently,
-the script only creates a .docx file. You can open that in Word or another office suite to export as PDF. Future expansions may include direct PDF output.</p></details><details><summary>FAQ: Can I get the full resume?</summary><p>Please reach out by email and I can provide you with my full resume.</p></details>< !-- Could add an "Expand All FAQ" button using JavaScript --><p style="text-align:right;"><a href="#top" class="jump-top">↑ Jump to Top</a></p></div>< !-- /container -->< !-- Footer --><footer>&copy;
-<span id="year"></span>Scott's Development &middot; 
- <a href="https://github.com/scottsdevelopment/resume" target="_blank">Source on GitHub</a><br>Licensed under MIT. Deployed via GitHub Pages. </footer><script> // Dynamic lastUpdated date
-const luSpan=document.getElementById('lastUpdated');
+    <hr class="gradient-hr">
 
-if (luSpan) {
-  luSpan.textContent=new Date().toLocaleDateString();
-}
+    <p style="text-align:center;">
+      Select your OS below or <a href="https://github.com/scottsdevelopment/resume/raw/refs/heads/main/Scott.20241224.docx" download>download the resume directly</a>.
+      <br>(Don’t see your OS? <a href="#">Contact us!</a>)
+    </p>
 
-const ySpan=document.getElementById('year');
+    <!-- OS Buttons -->
+    <div class="os-menu">
+      <button id="btnWindows" class="os-btn" onclick="showOs('windows')">Windows</button>
+      <button id="btnLinux" class="os-btn" onclick="showOs('linux')">Linux</button>
+      <button id="btnMac" class="os-btn" onclick="showOs('mac')">macOS</button>
+    </div>
 
-if (ySpan) {
-  ySpan.textContent=new Date().getFullYear();
-}
+    <!-- Windows Section -->
+    <section id="windowsSection" class="os-section">
+      <h2>Windows (PowerShell)</h2>
+      <ul>
+        <li>Requires Python 3.7+ installed on Windows.</li>
+        <li>Install <strong>python-docx</strong> via pip.</li>
+        <li>Download <strong>generate.py</strong> using Invoke-WebRequest.</li>
+        <li>Run the script &amp; open your newest Word doc automatically.</li>
+      </ul>
+      <button class="copy-button" onclick="copyCode('windowsCmd')">Copy</button>
+      <pre id="windowsCmd" class="code-snippet">
+<code>
+<span class="comment"># 1) Install python-docx</span>
+<span class="cmd">pip3 install python-docx</span>
 
-// OS Detection & Toggle
-function showOs(os) {
-  const sections= {
-    windows: document.getElementById('windowsSection'),
-      linux: document.getElementById('linuxSection'),
-      mac: document.getElementById('macSection'),
-  }
+<span class="comment"># 2) Download generate.py</span>
+<span class="cmd">Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/scottsdevelopment/resume/refs/heads/main/generate.py" -OutFile "generate.py"</span>
 
-  ;
+<span class="comment"># 3) Execute & open newest Word doc</span>
+<span class="cmd">python3 generate.py</span>
+<span class="cmd">Start-Process ((Get-ChildItem *.docx | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName)</span>
+</code>
+      </pre>
+    </section>
 
-  const buttons= {
-    windows: document.getElementById('btnWindows'),
-      linux: document.getElementById('btnLinux'),
-      mac: document.getElementById('btnMac'),
-  }
+    <!-- Linux Section -->
+    <section id="linuxSection" class="os-section">
+      <h2>Linux (Bash)</h2>
+      <ul>
+        <li>Tested on Ubuntu 22.04 &amp; Fedora 36.</li>
+        <li>Install <strong>python-docx</strong> via pip3.</li>
+        <li>Use <strong>curl</strong> to fetch generate.py.</li>
+        <li>Run the script, then xdg-open the docx file.</li>
+      </ul>
+      <button class="copy-button" onclick="copyCode('linuxCmd')">Copy</button>
+      <pre id="linuxCmd" class="code-snippet">
+<code>
+<span class="comment"># 1) Install python-docx</span>
+<span class="cmd">pip3 install python-docx</span>
 
-  ;
-  // Hide all
-  Object.values(sections).forEach(s=> s.classList.remove('active'));
-  Object.values(buttons).forEach(b=> b.classList.remove('active-btn'));
+<span class="comment"># 2) Download generate.py</span>
+<span class="cmd">curl -s https://raw.githubusercontent.com/scottsdevelopment/resume/refs/heads/main/generate.py -o generate.py</span>
 
-  if (sections[os]) {
-    sections[os].classList.add('active');
-  }
+<span class="comment"># 3) Execute & open newest Word doc</span>
+<span class="cmd">python3 generate.py</span>
+<span class="cmd">xdg-open "$(ls -t *.docx | head -n1)"</span>
+</code>
+      </pre>
+    </section>
 
-  if (buttons[os]) {
-    buttons[os].classList.add('active-btn');
-  }
-}
+    <!-- macOS Section -->
+    <section id="macSection" class="os-section">
+      <h2>macOS (Bash/Zsh)</h2>
+      <ul>
+        <li>Install <strong>python-docx</strong> via Homebrew or python.org.</li>
+        <li>Use <strong>curl</strong> to retrieve generate.py from GitHub.</li>
+        <li>Run the script, then <strong>open</strong> the docx in Word or Pages.</li>
+      </ul>
+      <button class="copy-button" onclick="copyCode('macCmd')">Copy</button>
+      <pre id="macCmd" class="code-snippet">
+<code>
+<span class="comment"># 1) Install python-docx</span>
+<span class="cmd">pip3 install python-docx</span>
 
-document.addEventListener('DOMContentLoaded', ()=> {
-    let userOS='windows';
-    const ua=navigator.userAgent.toLowerCase();
-    if (ua.includes('win')) userOS='windows';
-    else if (ua.includes('mac')) userOS='mac';
-    else if (ua.includes('linux')) userOS='linux';
-    showOs(userOS);
-  });
+<span class="comment"># 2) Download generate.py</span>
+<span class="cmd">curl -s https://raw.githubusercontent.com/scottsdevelopment/resume/refs/heads/main/generate.py -o generate.py</span>
 
-// Copy Code
-function copyCode(elemId) {
-  const codeElement=document.getElementById(elemId);
-  if ( !codeElement) return;
-  const textToCopy=codeElement.innerText.trim();
+<span class="comment"># 3) Execute & open newest Word doc</span>
+<span class="cmd">python3 generate.py</span>
+<span class="cmd">open "$(ls -t *.docx | head -n1)"</span>
+</code>
+      </pre>
+    </section>
 
-  navigator.clipboard.writeText(textToCopy).then(()=> {
-      // Show toast
-      const toast=document.createElement('div');
-      toast.textContent="Copied to clipboard!";
-      toast.style.position='fixed';
-      toast.style.top='10px';
-      toast.style.right='10px';
-      toast.style.background='#6F42C1';
-      toast.style.color='#fff';
-      toast.style.padding='0.5rem 1rem';
-      toast.style.borderRadius='4px';
-      toast.style.zIndex=9999;
-      toast.style.transition='opacity 0.4s ease';
-      document.body.appendChild(toast);
+    <!-- FAQ Section -->
+    <details>
+      <summary>FAQ: What if I don’t have Python 3 installed?</summary>
+      <p>You can install Python 3 on Windows via the Microsoft Store or python.org, on Linux via your distro’s package manager, and on macOS via Homebrew or the official installer.</p>
+    </details>
+    <details>
+      <summary>FAQ: Can I generate a PDF instead?</summary>
+      <p>Currently, the script only creates a .docx file. You can open that in Word or another office suite to export as PDF. Future expansions may include direct PDF output.</p>
+    </details>
+    <details>
+      <summary>FAQ: Can I get the full resume?</summary>
+      <p>Please reach out by email and I can provide you with my full resume.</p>
+    </details>
+    <!-- Could add an "Expand All FAQ" button using JavaScript -->
+      <p style="text-align:right;">
+        <a href="#top" class="jump-top">↑ Jump to Top</a>
+      </p>	
+  </div><!-- /container -->
 
-      // Optional confetti or a random “Yay!” phrase
-      // ...
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> Scott's Development &middot; 
+    <a href="https://github.com/scottsdevelopment/resume" target="_blank">Source on GitHub</a>
+    <br>
+    Licensed under MIT. Deployed via GitHub Pages.
+  </footer>
 
-      setTimeout(()=> {
-          toast.style.opacity='0';
+  <script>
+    // Dynamic lastUpdated date
+    const luSpan = document.getElementById('lastUpdated');
+    if (luSpan) {
+      luSpan.textContent = new Date().toLocaleDateString();
+    }
+    const ySpan = document.getElementById('year');
+    if (ySpan) {
+      ySpan.textContent = new Date().getFullYear();
+    }
 
-          setTimeout(()=> {
-              document.body.removeChild(toast);
-            }
+    // OS Detection & Toggle
+    function showOs(os) {
+      const sections = {
+        windows: document.getElementById('windowsSection'),
+        linux: document.getElementById('linuxSection'),
+        mac: document.getElementById('macSection'),
+      };
+      const buttons = {
+        windows: document.getElementById('btnWindows'),
+        linux: document.getElementById('btnLinux'),
+        mac: document.getElementById('btnMac'),
+      };
+      // Hide all
+      Object.values(sections).forEach(s => s.classList.remove('active'));
+      Object.values(buttons).forEach(b => b.classList.remove('active-btn'));
 
-            , 400);
-        }
-
-        , 1500);
+      if (sections[os]) {
+        sections[os].classList.add('active');
+      }
+      if (buttons[os]) {
+        buttons[os].classList.add('active-btn');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      let userOS = 'windows'; 
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes('win')) userOS = 'windows';
+      else if (ua.includes('mac')) userOS = 'mac';
+      else if (ua.includes('linux')) userOS = 'linux';
+      showOs(userOS);
     });
-}
 
-</script></body></html>
+    // Copy Code
+    function copyCode(elemId) {
+      const codeElement = document.getElementById(elemId);
+      if (!codeElement) return;
+      const textToCopy = codeElement.innerText.trim();
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        // Show toast
+        const toast = document.createElement('div');
+        toast.textContent = "Copied to clipboard!";
+        toast.style.position = 'fixed';
+        toast.style.top = '10px';
+        toast.style.right = '10px';
+        toast.style.background = '#6F42C1';
+        toast.style.color = '#fff';
+        toast.style.padding = '0.5rem 1rem';
+        toast.style.borderRadius = '4px';
+        toast.style.zIndex = 9999;
+        toast.style.transition = 'opacity 0.4s ease';
+        document.body.appendChild(toast);
+
+        // Optional confetti or a random “Yay!” phrase
+        // ...
+
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => {
+            document.body.removeChild(toast);
+          }, 400);
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
