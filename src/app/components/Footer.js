@@ -26,7 +26,6 @@ export default function Footer() {
 
           <p className={`mt-4 ${colors.text.secondary} text-sm max-w-md`}>
             Modern web applications designed for growth, resilience, and lasting impact.
-            &nbsp;<a href="#contact" className="underline">Let's talk →</a>
           </p>
         </div>
 
