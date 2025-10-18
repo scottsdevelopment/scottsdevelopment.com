@@ -6,6 +6,7 @@ const metaDescription = "Scott's Development is a Michigan-based enterprise web 
 const ogDescription = "Michigan enterprise web development agency delivering secure, scalable, and HIPAA-compliant web applications. Specializing in legacy system modernization, cloud-native applications, AI-powered automation, and compliance-ready platforms, Scott's Development helps government, healthcare, and enterprise organizations achieve long-term growth and performance."
 
 export const metadata = {
+  metadataBase: new URL('https://scottsdevelopment.com'),
   title: metaTitle,
   description: metaDescription,
   openGraph: {
