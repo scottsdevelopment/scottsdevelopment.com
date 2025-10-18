@@ -81,11 +81,11 @@ function PricingContactForm() {
         {submitting ? "Submitting..." : "Start the conversation"}
       </button>
       <p
-        className={`text-sm mt-2${
+        className={`text-sm mt-2 ${
           status
             ? status.startsWith("Thanks")
-              ? ` ${colors.status.success}`
-              : ` ${colors.status.error}`
+              ? colors.status.success
+              : colors.status.error
             : ""
         }`}
         data-testid="form-status"

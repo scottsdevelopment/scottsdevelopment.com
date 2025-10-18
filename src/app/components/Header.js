@@ -8,7 +8,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className={`sticky top-0 z-40 ${colors.bg.primary}/80 backdrop-blur-sm border-b ${colors.border.primary}`}>
+    <header className={`sticky top-0 z-40 ${colors.bg.primary80} backdrop-blur-sm border-b ${colors.border.primary}`}>
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
           <LogoIcon />
@@ -16,10 +16,10 @@ export default function Header() {
         </a>
 
         <nav className={`hidden md:flex items-center gap-6 ${colors.text.body}`}>
-          <a href="#services" className={`hover:${colors.text.heading}`}>Services</a>
-          <a href="#work" className={`hover:${colors.text.heading}`}>Work</a>
-          <a href="#process" className={`hover:${colors.text.heading}`}>Process</a>
-          <a href="#pricing" className={`hover:${colors.text.heading}`}>Pricing</a>
+          <a href="#services" className={`${colors.link.default} ${colors.link.hover}`}>Services</a>
+          <a href="#work" className={`${colors.link.default} ${colors.link.hover}`}>Work</a>
+          <a href="#process" className={`${colors.link.default} ${colors.link.hover}`}>Process</a>
+          <a href="#pricing" className={`${colors.link.default} ${colors.link.hover}`}>Pricing</a>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -29,7 +29,7 @@ export default function Header() {
 
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 rounded hover:${colors.bg.hover}`}
+            className={`md:hidden p-2 rounded ${colors.bg.hover}`}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
@@ -55,28 +55,28 @@ export default function Header() {
           <nav className={`flex flex-col space-y-4 ${colors.text.body}`}>
             <a 
               href="#services" 
-              className={`py-2 hover:${colors.text.heading} transition-colors`}
+              className={`py-2 ${colors.link.default} ${colors.link.hover} transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
             </a>
             <a 
               href="#work" 
-              className={`py-2 hover:${colors.text.heading} transition-colors`}
-              onClick={() => setIsMobileMenu-smOpen(false)}
+              className={`py-2 ${colors.link.default} ${colors.link.hover} transition-colors`}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Work
             </a>
             <a 
               href="#process" 
-              className={`py-2 hover:${colors.text.heading} transition-colors`}
+              className={`py-2 ${colors.link.default} ${colors.link.hover} transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Process
             </a>
             <a 
               href="#pricing" 
-              className={`py-2 hover:${colors.text.heading} transition-colors`}
+              className={`py-2 ${colors.link.default} ${colors.link.hover} transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Pricing

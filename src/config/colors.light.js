@@ -19,6 +19,9 @@ export const colors = {
       overlay: 'bg-gray-900/50',          // subtle dark overlay for modals
       accent: 'bg-cyan-600',              // CTA background (trust + energy)
       gradient: 'bg-gradient-to-br from-cyan-400 via-sky-500 to-violet-500', // same brand energy
+      // Opacity variants
+      primary80: 'bg-gray-50/80',         // 80% opacity for header backdrop
+      secondary40: 'bg-white/40',         // 40% opacity for footer
     },
   
     // Text hierarchy
@@ -45,6 +48,8 @@ export const colors = {
       primary: 'border-gray-200',         // light dividers
       secondary: 'border-gray-300',       // stronger emphasis
       subtle: 'border-gray-100',          // card outlines
+      // Opacity variants
+      primary60: 'border-gray-200/60',    // 60% opacity for footer border
     },
   
     // Interactive
@@ -54,6 +59,15 @@ export const colors = {
       hover: 'hover:text-violet-500',
       focus: 'focus:text-cyan-600',
       disabled: 'text-gray-400',
+    },
+
+    // Link states (for navigation and footer links)
+    link: {
+      default: 'text-gray-500',
+      hover: 'hover:text-gray-900',
+      focus: 'focus:text-gray-900',
+      underline: 'underline',
+      underlineHover: 'hover:underline',
     },
   
     // Buttons (CTA system)
