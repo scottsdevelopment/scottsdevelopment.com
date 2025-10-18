@@ -1,0 +1,11 @@
+services:
+  nextjs:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app:Z
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    user: "${HOST_UID}:${HOST_GID}"
