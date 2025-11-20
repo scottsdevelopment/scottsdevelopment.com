@@ -10,115 +10,123 @@
  */
 
 export const colors = {
-    // Background layers
-    bg: {
-      primary: 'bg-gray-50',              // #F9FAFB - clean page background
-      secondary: 'bg-white',              // #FFFFFF - cards, elevated surfaces
-      hover: 'bg-gray-100',               // #F3F4F6 - hover effects
-      elevated: 'bg-white',               // for modals / card layers
-      overlay: 'bg-gray-900/50',          // subtle dark overlay for modals
-      accent: 'bg-cyan-600',              // CTA background (trust + energy)
-      gradient: 'bg-gradient-to-br from-cyan-400 via-sky-500 to-violet-500', // same brand energy
-      // Opacity variants
-      primary80: 'bg-gray-50/80',         // 80% opacity for header backdrop
-      secondary40: 'bg-white/40',         // 40% opacity for footer
-    },
-  
-    // Text hierarchy
-    text: {
-      heading: 'text-gray-900',           // #111827 - primary heading
-      body: 'text-gray-800',              // strong readable paragraph
-      secondary: 'text-gray-600',         // subtext
-      muted: 'text-gray-500',             // metadata / placeholders
-      accent: 'text-cyan-600',            // links / callouts
-      dark: 'text-white',                 // text on dark buttons
-    },
-  
-    // Rich content blocks
-    copy: {
-      primary: 'text-gray-900',
-      secondary: 'text-gray-700',
-      tertiary: 'text-gray-600',
-      muted: 'text-gray-500',
-      accent: 'text-cyan-600',
-    },
-  
-    // Borders
-    border: {
-      primary: 'border-gray-200',         // light dividers
-      secondary: 'border-gray-300',       // stronger emphasis
-      subtle: 'border-gray-100',          // card outlines
-      // Opacity variants
-      primary60: 'border-gray-200/60',    // 60% opacity for footer border
-    },
-  
-    // Interactive
-    interactive: {
-      primary: 'text-cyan-600',
-      secondary: 'text-violet-600',
-      hover: 'hover:text-violet-500',
-      focus: 'focus:text-cyan-600',
-      disabled: 'text-gray-400',
-    },
+  // Background layers
+  bg: {
+    primary: 'bg-gray-50',              // #F9FAFB - clean page background
+    secondary: 'bg-white',              // #FFFFFF - cards, elevated surfaces
+    hover: 'bg-gray-100',               // #F3F4F6 - hover effects
+    elevated: 'bg-white',               // for modals / card layers
+    overlay: 'bg-gray-900/50',          // subtle dark overlay for modals
+    accent: 'bg-cyan-600',              // CTA background (trust + energy)
+    gradient: 'bg-gradient-to-br from-cyan-400 via-sky-500 to-violet-500', // same brand energy
+    // Opacity variants
+    primary80: 'bg-white/80',           // 80% opacity for header backdrop
+    secondary40: 'bg-gray-50/40',       // 40% opacity for footer
+    header: 'bg-white/80',              // Clean glassmorphism header
+    footer: 'bg-gray-50',               // Clean light footer
+    contrast: 'bg-gray-50',             // Subtle contrast
+    contrastBrand: 'bg-cyan-50',        // Brand colored section background
+  },
 
-    // Link states (for navigation and footer links)
-    link: {
-      default: 'text-gray-500',
-      hover: 'hover:text-gray-900',
-      focus: 'focus:text-gray-900',
-      underline: 'underline',
-      underlineHover: 'hover:underline',
-    },
-  
-    // Buttons (CTA system)
-    button: {
-      primary:
-        'bg-cyan-600 text-white hover:bg-cyan-500 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-1 transition-colors',
-      secondary:
-        'border border-gray-300 text-gray-700 hover:bg-gray-100 focus:ring-1 focus:ring-gray-400',
-      accent:
-        'bg-violet-600 text-white hover:bg-violet-500 focus:ring-2 focus:ring-violet-500 transition-colors',
-      ghost:
-        'text-cyan-600 hover:text-cyan-500 hover:bg-gray-100 focus:ring-1 focus:ring-cyan-500',
-      disabled:
-        'bg-gray-100 text-gray-400 cursor-not-allowed',
-    },
-  
-    // Card components
-    card: {
-      container:
-        'bg-white border border-gray-200 rounded-2xl shadow-sm',
-      heading: 'text-gray-900',
-      body: 'text-gray-700',
-      muted: 'text-gray-500',
-      highlight: 'text-cyan-600',
-    },
-  
-    // Section layout
-    section: {
-      container:
-        'bg-gray-50 border-t border-gray-200',
-      heading: 'text-gray-900',
-      body: 'text-gray-700',
-      muted: 'text-gray-500',
-      accent: 'text-cyan-600',
-    },
-  
-    // Status indicators
-    status: {
-      success: 'text-emerald-600',       // #059669
-      warning: 'text-amber-600',         // #D97706
-      error: 'text-rose-600',            // #E11D48
-      info: 'text-sky-600',              // #0284C7
-    },
-  
-    // Highlights (banners, callouts)
-    highlight: {
-      primary: 'bg-cyan-50 text-cyan-700 border border-cyan-100',
-      secondary: 'bg-violet-50 text-violet-700 border border-violet-100',
-      success: 'bg-emerald-50 text-emerald-700 border border-emerald-100',
-    },
-  };
-  
-  export default colors;
-  
+  // Text hierarchy
+  text: {
+    heading: 'text-gray-900',           // #111827 - primary heading
+    body: 'text-gray-800',              // strong readable paragraph
+    secondary: 'text-gray-600',         // subtext
+    muted: 'text-gray-500',             // metadata / placeholders
+    accent: 'text-cyan-600',            // links / callouts
+    dark: 'text-white',                 // text on dark buttons
+    inverse: 'text-gray-900',           // text on contrast backgrounds
+    inverseSecondary: 'text-gray-600',  // secondary text on contrast backgrounds
+  },
+
+  // Rich content blocks
+  copy: {
+    primary: 'text-gray-900',
+    secondary: 'text-gray-700',
+    tertiary: 'text-gray-600',
+    muted: 'text-gray-500',
+    accent: 'text-cyan-600',
+  },
+
+  // Borders
+  border: {
+    primary: 'border-gray-200',         // light dividers
+    secondary: 'border-gray-300',       // stronger emphasis
+    subtle: 'border-gray-100',          // card outlines
+    // Opacity variants
+    primary60: 'border-gray-200/60',    // 60% opacity for footer border
+    inverse: 'border-gray-300',         // border for contrast backgrounds
+  },
+
+  // Interactive
+  interactive: {
+    primary: 'text-cyan-600',
+    secondary: 'text-violet-600',
+    hover: 'hover:text-violet-500',
+    focus: 'focus:text-cyan-600',
+    disabled: 'text-gray-400',
+  },
+
+  // Link states (for navigation and footer links)
+  link: {
+    default: 'text-gray-500',
+    hover: 'hover:text-gray-900',
+    focus: 'focus:text-gray-900',
+    underline: 'underline',
+    underlineHover: 'hover:underline',
+    inverse: 'text-gray-600',
+    inverseHover: 'hover:text-gray-900',
+  },
+
+  // Buttons (CTA system)
+  button: {
+    primary:
+      'bg-cyan-600 text-white hover:bg-cyan-500 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-1 transition-colors',
+    secondary:
+      'bg-gray-900 text-white hover:bg-gray-800 focus:ring-1 focus:ring-gray-900 shadow-sm',
+    accent:
+      'bg-violet-600 text-white hover:bg-violet-500 focus:ring-2 focus:ring-violet-500 transition-colors',
+    ghost:
+      'text-cyan-600 hover:text-cyan-500 hover:bg-gray-100 focus:ring-1 focus:ring-cyan-500',
+    disabled:
+      'bg-gray-100 text-gray-400 cursor-not-allowed',
+  },
+
+  // Card components
+  card: {
+    container:
+      'bg-white border border-gray-200 rounded-2xl shadow-sm',
+    heading: 'text-gray-900',
+    body: 'text-gray-700',
+    muted: 'text-gray-500',
+    highlight: 'text-cyan-600',
+  },
+
+  // Section layout
+  section: {
+    container:
+      'bg-gray-50 border-t border-gray-200',
+    heading: 'text-gray-900',
+    body: 'text-gray-700',
+    muted: 'text-gray-500',
+    accent: 'text-cyan-600',
+  },
+
+  // Status indicators
+  status: {
+    success: 'text-emerald-600',       // #059669
+    warning: 'text-amber-600',         // #D97706
+    error: 'text-rose-600',            // #E11D48
+    info: 'text-sky-600',              // #0284C7
+  },
+
+  // Highlights (banners, callouts)
+  highlight: {
+    primary: 'bg-cyan-50 text-cyan-700 border border-cyan-100',
+    secondary: 'bg-violet-50 text-violet-700 border border-violet-100',
+    success: 'bg-emerald-50 text-emerald-700 border border-emerald-100',
+  },
+};
+
+export default colors;
