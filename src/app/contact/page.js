@@ -53,9 +53,9 @@ export default function Contact() {
                                     <div className="w-12 h-12 rounded-lg bg-cyan-50 flex items-center justify-center flex-shrink-0">
                                         <Mail className="w-6 h-6 text-cyan-600" />
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                                        <a href="mailto:scott@scottsdevelopment.com" className="text-lg text-gray-600 hover:text-cyan-600 transition-colors">
+                                        <a href="mailto:scott@scottsdevelopment.com" className="text-lg text-gray-600 hover:text-cyan-600 transition-colors break-words">
                                             scott@scottsdevelopment.com
                                         </a>
                                     </div>
