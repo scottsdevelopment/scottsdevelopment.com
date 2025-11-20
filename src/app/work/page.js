@@ -92,33 +92,31 @@ export default function Work() {
                             transition={{ delay: index * 0.1 }}
                         >
                             <Card className="p-8 md:p-12 border-gray-200 hover:border-cyan-200 transition-colors">
-                                <div className="flex flex-col md:flex-row gap-8 items-start">
-                                    <div className={`p-4 rounded-xl ${colors.bg.secondary} border border-gray-100 shadow-sm`}>
+                                {/* Icon and Title Row */}
+                                <div className="flex flex-row gap-4 items-center mb-4">
+                                    <div className={`p-3 md:p-4 rounded-xl ${colors.bg.secondary} border border-gray-100 shadow-sm flex-shrink-0`}>
                                         {study.icon}
                                     </div>
-                                    <div className="flex-1">
-                                        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                                            <h3 className={`text-2xl font-bold ${colors.text.heading}`}>
-                                                {study.title}
-                                            </h3>
-                                        </div>
+                                    <h3 className={`text-xl md:text-2xl font-bold ${colors.text.heading} flex-1 min-w-0`}>
+                                        {study.title}
+                                    </h3>
+                                </div>
 
-                                        <p className={`text-lg font-semibold text-cyan-700 mb-4`}>
-                                            Impact: {study.impact}
-                                        </p>
+                                {/* Full-width content below */}
+                                <p className={`text-lg font-semibold text-cyan-700 mb-4`}>
+                                    Impact: {study.impact}
+                                </p>
 
-                                        <p className={`${colors.text.secondary} text-lg leading-relaxed mb-6`}>
-                                            {study.description}
-                                        </p>
+                                <p className={`${colors.text.secondary} text-lg leading-relaxed mb-6`}>
+                                    {study.description}
+                                </p>
 
-                                        <div className="flex flex-wrap gap-2">
-                                            {study.tags.map((tag, i) => (
-                                                <span key={i} className="px-4 py-1.5 bg-white border border-cyan-100 text-cyan-700 rounded-full text-sm font-semibold shadow-sm">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {study.tags.map((tag, i) => (
+                                        <span key={i} className="px-4 py-1.5 bg-white border border-cyan-100 text-cyan-700 rounded-full text-sm font-semibold shadow-sm">
+                                            {tag}
+                                        </span>
+                                    ))}
                                 </div>
                             </Card>
                         </motion.div>
