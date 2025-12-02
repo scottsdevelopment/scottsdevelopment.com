@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
-import { Mail, Phone, MapPin, Calendar } from 'lucide-react'
+import { Mail, Calendar } from 'lucide-react'
 import { useFormspree } from '../hooks/useFormspree'
 
 export default function Contact() {
@@ -63,26 +63,13 @@ export default function Contact() {
 
                                 <div className="flex items-start gap-4">
                                     <div className="w-12 h-12 rounded-lg bg-violet-50 flex items-center justify-center flex-shrink-0">
-                                        <Phone className="w-6 h-6 text-violet-600" />
+                                        <Calendar className="w-6 h-6 text-violet-600" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
-                                        <a href="tel:+1***REMOVED***" className="text-lg text-gray-600 hover:text-violet-600 transition-colors">
-                                            ***REMOVED***
+                                        <h3 className="text-lg font-semibold text-gray-900 mb-1">Schedule a Call</h3>
+                                        <a href="https://calendly.com/scottsdevelopment" target="_blank" rel="noopener noreferrer" className="text-lg text-gray-600 hover:text-violet-600 transition-colors">
+                                            Book a Consultation
                                         </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0">
-                                        <MapPin className="w-6 h-6 text-emerald-600" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-gray-900 mb-1">Location</h3>
-                                        <p className="text-lg text-gray-600">
-                                            ***REMOVED***<br />
-                                            ***REMOVED***
-                                        </p>
                                     </div>
                                 </div>
 
