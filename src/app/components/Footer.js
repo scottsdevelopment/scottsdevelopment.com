@@ -76,7 +76,7 @@ export default function Footer() {
               <li><Link href="/" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Home</Link></li>
               <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Work</Link></li>
               <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Services</Link></li>
-              <li><Link href="/locations/detroit-ferndale" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Location</Link></li>
+              <li><Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Location</Link></li>
               <li><Link href="/contact" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Contact Us</Link></li>
             </ul>
           </div>
@@ -89,7 +89,7 @@ export default function Footer() {
             <span>&copy; <span id="year"></span> Scott's Development</span>
           </div>
           <div className="flex gap-6">
-            <Link href="/locations/detroit-ferndale" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
+            <Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
               Greater Metro Detroit
             </Link>
           </div>

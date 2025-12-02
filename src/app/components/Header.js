@@ -20,7 +20,7 @@ export default function Header() {
         <nav className={`hidden md:flex items-center gap-8 ${colors.text.inverse}`}>
           <Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Services</Link>
           <Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Work</Link>
-          <Link href="/locations/detroit-ferndale" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Location</Link>
+          <Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Location</Link>
           <Link href="/contact" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Contact Us</Link>
         </nav>
 
@@ -74,7 +74,7 @@ export default function Header() {
               Our Work
             </Link>
             <Link
-              href="/locations/detroit-ferndale"
+              href="/locations/detroit"
               className={`py-2 ${colors.link.inverse} ${colors.link.inverseHover} transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
