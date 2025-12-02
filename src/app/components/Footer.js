@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-6">
             <Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
-              Greater Metro Detroit
+              Web Development Greater Metro Detroit
             </Link>
           </div>
         </div>
