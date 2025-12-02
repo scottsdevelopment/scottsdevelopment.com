@@ -37,13 +37,9 @@ export default function Footer() {
                 </a>
               </div>
               <div>
-                <a href="tel:+1***REMOVED***" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
-                  ***REMOVED***
+                <a href="https://calendly.com/scottsdevelopment" target="_blank" rel="noopener noreferrer" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
+                  Schedule a Consultation
                 </a>
-              </div>
-              <div className="leading-relaxed">
-                ***REMOVED***<br />
-                ***REMOVED***
               </div>
             </div>
           </div>
