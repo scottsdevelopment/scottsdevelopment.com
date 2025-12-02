@@ -25,9 +25,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-6">
-          <a href="tel:+1***REMOVED***" className={`hidden lg:block text-sm font-medium ${colors.link.inverse} ${colors.link.inverseHover} transition-colors`}>
-            ***REMOVED***
-          </a>
+
           <Link href="/contact" className="hidden md:block">
             <Button variant="primary" className="px-4 py-2 text-sm">
               Connect with us
