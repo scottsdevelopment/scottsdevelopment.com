@@ -23,9 +23,15 @@ export const colors = {
     primary80: 'bg-white/80',           // 80% opacity for header backdrop
     secondary40: 'bg-gray-50/40',       // 40% opacity for footer
     header: 'bg-white/80',              // Clean glassmorphism header
-    footer: 'bg-gray-50',               // Clean light footer
+    footer: 'bg-slate-200 shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]', // Deeper anchor (slate-200)
     contrast: 'bg-gray-50',             // Subtle contrast
+    dark: 'bg-slate-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.04)]',   // Mid-tone step (slate-100) vs gray-50
     contrastBrand: 'bg-cyan-50',        // Brand colored section background
+    warningLight: 'bg-amber-50',        // Light warning background
+    successLight: 'bg-emerald-50',      // Light success background
+    infoLight: 'bg-sky-50',             // Light info background
+    subtle: 'bg-gray-100',              // Subtle background (placeholders)
+    overlayBrand: 'bg-cyan-900/10',     // Brand tinted overlay
   },
 
   // Text hierarchy
@@ -38,6 +44,8 @@ export const colors = {
     dark: 'text-white',                 // text on dark buttons
     inverse: 'text-gray-900',           // text on contrast backgrounds
     inverseSecondary: 'text-gray-600',  // secondary text on contrast backgrounds
+    onDark: 'text-slate-900',           // text on emphasis background
+    onDarkSecondary: 'text-slate-600',  // secondary text on emphasis background
   },
 
   // Rich content blocks
@@ -57,6 +65,11 @@ export const colors = {
     // Opacity variants
     primary60: 'border-gray-200/60',    // 60% opacity for footer border
     inverse: 'border-gray-300',         // border for contrast backgrounds
+    onDark: 'border-slate-200',         // border for emphasis backgrounds
+    accent: 'border-cyan-500',          // brand emphasis borders
+    warning: 'border-amber-400',        // warning borders
+    success: 'border-emerald-400',      // success borders
+    info: 'border-sky-400',             // info borders
   },
 
   // Interactive
@@ -64,6 +77,7 @@ export const colors = {
     primary: 'text-cyan-600',
     secondary: 'text-violet-600',
     hover: 'hover:text-violet-500',
+    primaryHover: 'hover:text-cyan-500',
     focus: 'focus:text-cyan-600',
     disabled: 'text-gray-400',
   },
@@ -126,6 +140,18 @@ export const colors = {
     primary: 'bg-cyan-50 text-cyan-700 border border-cyan-100',
     secondary: 'bg-violet-50 text-violet-700 border border-violet-100',
     success: 'bg-emerald-50 text-emerald-700 border border-emerald-100',
+  },
+
+  // Brand specifics
+  brand: {
+    bullet: 'bg-cyan-500',
+  },
+
+  // Feature specific themes
+  features: {
+    design: { bg: 'bg-blue-50', text: 'text-blue-600' },
+    ai: { bg: 'bg-purple-50', text: 'text-purple-600' },
+    marketing: { bg: 'bg-pink-50', text: 'text-pink-600' },
   },
 };
 

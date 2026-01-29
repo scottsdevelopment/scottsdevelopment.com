@@ -6,10 +6,19 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Card from '../components/ui/Card'
 import ContactSection from '../components/ContactSection'
-import { Database, Globe, Lock, Layout, Code2, ShoppingCart, Server, Zap } from 'lucide-react'
+import { Database, Globe, Lock, Layout, Code2, ShoppingCart, Server, Zap, Snowflake, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Work() {
     const caseStudies = [
+        {
+            title: "Ferndale Seasonal: From Blizzard to Business in 48 Hours",
+            impact: "$300+ net revenue & validated seasonal blueprint in <48h.",
+            description: "How we leveraged LLMs and rapid deployment to build a profitable service brand over a weekend. See how we apply CTO-level agility to real-world market triggers.",
+            tags: ["AI-First Workflow", "Rapid Deployment", "Operations", "Brand Strategy"],
+            icon: <Snowflake className="w-6 h-6 text-cyan-600" />,
+            slug: "ferndale-seasonal"
+        },
         {
             title: "Custom Web Applications",
             impact: "Delivering scalable, high-performance solutions that drive business growth.",
@@ -91,34 +100,70 @@ export default function Work() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <Card className="p-8 md:p-12 border-gray-200 hover:border-cyan-200 transition-colors">
-                                {/* Icon and Title Row */}
-                                <div className="flex flex-row gap-4 items-center mb-4">
-                                    <div className={`p-3 md:p-4 rounded-xl ${colors.bg.secondary} border border-gray-100 shadow-sm flex-shrink-0`}>
-                                        {study.icon}
+                            {study.slug ? (
+                                <Link href={`/work/${study.slug}`} className="block h-full group">
+                                    <Card className="p-8 md:p-12 border-gray-200 group-hover:border-cyan-200 transition-colors h-full">
+                                        <div className="flex flex-row gap-4 items-center mb-4">
+                                            <div className={`p-3 md:p-4 rounded-xl ${colors.bg.secondary} border border-gray-100 shadow-sm flex-shrink-0`}>
+                                                {study.icon}
+                                            </div>
+                                            <h3 className={`text-xl md:text-2xl font-bold ${colors.text.heading} flex-1 min-w-0`}>
+                                                {study.title}
+                                            </h3>
+                                        </div>
+
+                                        <p className="text-lg font-semibold text-cyan-700 mb-4">
+                                            Impact: {study.impact}
+                                        </p>
+
+                                        <p className={`${colors.text.secondary} text-lg leading-relaxed mb-6`}>
+                                            {study.description}
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2">
+                                            {study.tags.map((tag, i) => (
+                                                <span key={i} className="px-4 py-1.5 bg-white border border-cyan-100 text-cyan-700 rounded-full text-sm font-semibold shadow-sm">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-8">
+                                            <span className="inline-flex items-center gap-2 text-cyan-600 font-semibold group-hover:text-cyan-700 transition-colors">
+                                                Read the Case Study
+                                                <ArrowRight className="w-4 h-4 ml-1" />
+                                            </span>
+                                        </div>
+                                    </Card>
+                                </Link>
+                            ) : (
+                                <Card className="p-8 md:p-12 border-gray-200 transition-colors h-full">
+                                    <div className="flex flex-row gap-4 items-center mb-4">
+                                        <div className={`p-3 md:p-4 rounded-xl ${colors.bg.secondary} border border-gray-100 shadow-sm flex-shrink-0`}>
+                                            {study.icon}
+                                        </div>
+                                        <h3 className={`text-xl md:text-2xl font-bold ${colors.text.heading} flex-1 min-w-0`}>
+                                            {study.title}
+                                        </h3>
                                     </div>
-                                    <h3 className={`text-xl md:text-2xl font-bold ${colors.text.heading} flex-1 min-w-0`}>
-                                        {study.title}
-                                    </h3>
-                                </div>
 
-                                {/* Full-width content below */}
-                                <p className={`text-lg font-semibold text-cyan-700 mb-4`}>
-                                    Impact: {study.impact}
-                                </p>
+                                    <p className="text-lg font-semibold text-cyan-700 mb-4">
+                                        Impact: {study.impact}
+                                    </p>
 
-                                <p className={`${colors.text.secondary} text-lg leading-relaxed mb-6`}>
-                                    {study.description}
-                                </p>
+                                    <p className={`${colors.text.secondary} text-lg leading-relaxed mb-6`}>
+                                        {study.description}
+                                    </p>
 
-                                <div className="flex flex-wrap gap-2">
-                                    {study.tags.map((tag, i) => (
-                                        <span key={i} className="px-4 py-1.5 bg-white border border-cyan-100 text-cyan-700 rounded-full text-sm font-semibold shadow-sm">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </Card>
+                                    <div className="flex flex-wrap gap-2">
+                                        {study.tags.map((tag, i) => (
+                                            <span key={i} className="px-4 py-1.5 bg-white border border-cyan-100 text-cyan-700 rounded-full text-sm font-semibold shadow-sm">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </Card>
+                            )}
                         </motion.div>
                     ))}
                 </div>

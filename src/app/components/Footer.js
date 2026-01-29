@@ -14,7 +14,7 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer className={`border-t ${colors.border.inverse} ${colors.bg.footer}`}>
+    <footer className={`border-t ${colors.border.onDark} ${colors.bg.footer}`}>
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Branding Section */}
@@ -22,22 +22,22 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <LogoIcon />
               <div>
-                <div className={`font-semibold ${colors.text.inverse}`}>Scott's Development</div>
-                <div className={`${colors.text.inverseSecondary} text-xs`}>Detroit • Michigan • Remote</div>
+                <div className={`font-semibold ${colors.text.onDark}`}>Scott's Development</div>
+                <div className={`${colors.text.onDarkSecondary} text-xs`}>Detroit • Michigan • Remote</div>
               </div>
             </Link>
-            <p className={`mt-4 ${colors.text.inverseSecondary} text-sm leading-relaxed`}>
+            <p className={`mt-4 ${colors.text.onDarkSecondary} text-sm leading-relaxed`}>
               Staff Engineering Leadership & Fractional CTO Services.
             </p>
 
-            <div className={`mt-6 space-y-3 text-sm ${colors.text.inverseSecondary}`}>
+            <div className={`mt-6 space-y-3 text-sm ${colors.text.onDarkSecondary}`}>
               <div>
-                <a href="mailto:scott@scottsdevelopment.com" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
+                <a href="mailto:scott@scottsdevelopment.com" className={`hover:text-cyan-400 transition-colors`}>
                   scott@scottsdevelopment.com
                 </a>
               </div>
               <div>
-                <a href="https://calendly.com/scottsdevelopment" target="_blank" rel="noopener noreferrer" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
+                <a href="https://calendly.com/scottsdevelopment" target="_blank" rel="noopener noreferrer" className={`hover:text-cyan-400 transition-colors`}>
                   Schedule a Consultation
                 </a>
               </div>
@@ -46,55 +46,55 @@ export default function Footer() {
 
           {/* Service Section */}
           <div>
-            <h4 className={`text-sm font-bold uppercase tracking-wider ${colors.text.inverse} mb-4`}>Services</h4>
-            <ul className={`space-y-3 text-sm ${colors.text.inverseSecondary}`}>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Custom Web Solutions</Link></li>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Legacy Modernization</Link></li>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Fractional CTO</Link></li>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Compliance & Security</Link></li>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Team Augmentation</Link></li>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>eCommerce Intelligence</Link></li>
+            <h4 className={`text-sm font-bold uppercase tracking-wider ${colors.text.onDark} mb-4`}>Services</h4>
+            <ul className={`space-y-3 text-sm ${colors.text.onDarkSecondary}`}>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Custom Web Solutions</Link></li>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Legacy Modernization</Link></li>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Fractional CTO</Link></li>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Compliance & Security</Link></li>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Team Augmentation</Link></li>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>eCommerce Intelligence</Link></li>
             </ul>
           </div>
 
           {/* Industries Section */}
           <div>
-            <h4 className={`text-sm font-bold uppercase tracking-wider ${colors.text.inverse} mb-4`}>Industries</h4>
-            <ul className={`space-y-3 text-sm ${colors.text.inverseSecondary}`}>
-              <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Healthcare</Link></li>
-              <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Government</Link></li>
-              <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>eCommerce & Retail</Link></li>
-              <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Supply Chain & Logistics</Link></li>
-              <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>SaaS & Startups</Link></li>
+            <h4 className={`text-sm font-bold uppercase tracking-wider ${colors.text.onDark} mb-4`}>Industries</h4>
+            <ul className={`space-y-3 text-sm ${colors.text.onDarkSecondary}`}>
+              <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>Healthcare</Link></li>
+              <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>Government</Link></li>
+              <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>eCommerce & Retail</Link></li>
+              <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>Supply Chain & Logistics</Link></li>
+              <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>SaaS & Startups</Link></li>
             </ul>
           </div>
 
           {/* Navigation Section */}
           <div>
-            <h4 className={`text-sm font-bold uppercase tracking-wider ${colors.text.inverse} mb-4`}>Navigation</h4>
-            <ul className={`space-y-3 text-sm ${colors.text.inverseSecondary}`}>
-              <li><Link href="/" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Home</Link></li>
-              <li><Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Work</Link></li>
-              <li><Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Services</Link></li>
-              <li><Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Our Location</Link></li>
-              <li><Link href="/contact" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>Contact Us</Link></li>
+            <h4 className={`text-sm font-bold uppercase tracking-wider ${colors.text.onDark} mb-4`}>Navigation</h4>
+            <ul className={`space-y-3 text-sm ${colors.text.onDarkSecondary}`}>
+              <li><Link href="/" className={`${colors.link.hover} transition-colors`}>Home</Link></li>
+              <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>Our Work</Link></li>
+              <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Our Services</Link></li>
+              <li><Link href="/locations/detroit" className={`${colors.link.hover} transition-colors`}>Our Location</Link></li>
+              <li><Link href="/contact" className={`${colors.link.hover} transition-colors`}>Contact Us</Link></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className={`border-t ${colors.border.inverse} py-8`}>
-        <div className={`mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs ${colors.text.inverseSecondary}`}>
+      <div className={`border-t ${colors.border.onDark} py-8`}>
+        <div className={`mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs ${colors.text.onDarkSecondary}`}>
           <div className="flex items-center gap-1">
             <span>&copy; <span id="year"></span> Scott's Development</span>
           </div>
           <div className="flex gap-6">
-            <Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover}`}>
+            <Link href="/locations/detroit" className={`${colors.link.hover} transition-colors`}>
               Web Development Greater Metro Detroit
             </Link>
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }

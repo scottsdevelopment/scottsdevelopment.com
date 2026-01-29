@@ -16,7 +16,7 @@ export default function ContactSection({
 
     if (status === "Thanks for your submission!") {
         return (
-            <section className={`py-24 px-6 ${colors.bg.primary}`}>
+            <section className={`py-24 ${colors.bg.dark}`}>
                 <div className="max-w-3xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -37,13 +37,13 @@ export default function ContactSection({
     }
 
     return (
-        <section className={`py-24 px-6 ${colors.bg.primary}`} id="contact">
+        <section className={`py-24 px-6 ${colors.bg.dark}`} id="contact">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className={`text-3xl md:text-4xl font-bold ${colors.text.heading} mb-4`}>
+                    <h2 className={`text-3xl md:text-4xl font-bold ${colors.text.onDark} mb-4`}>
                         {title}
                     </h2>
-                    <p className={`text-xl ${colors.text.secondary}`}>
+                    <p className={`text-xl ${colors.text.onDarkSecondary}`}>
                         {subtitle}
                     </p>
                 </div>
