@@ -20,18 +20,12 @@ export default function Header() {
         <nav className={`hidden md:flex items-center gap-8 ${colors.text.inverse}`}>
           <Link href="/services" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Services</Link>
           <Link href="/work" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Work</Link>
-          <Link href="/locations/detroit" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Our Location</Link>
+          <Link href="/blog" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Blog</Link>
+          <Link href="/faq" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>FAQ</Link>
           <Link href="/contact" className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>Contact Us</Link>
         </nav>
 
         <div className="flex items-center gap-6">
-
-          <Link href="/contact" className="hidden md:block">
-            <Button variant="primary" className="px-4 py-2 text-sm">
-              Connect with us
-            </Button>
-          </Link>
-
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded hover:bg-gray-800`}
@@ -72,12 +66,20 @@ export default function Header() {
               Our Work
             </Link>
             <Link
-              href="/locations/detroit"
+              href="/blog"
               className={`py-2 ${colors.link.inverse} ${colors.link.inverseHover} transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Our Location
+              Blog
             </Link>
+            <Link
+              href="/faq"
+              className={`py-2 ${colors.link.inverse} ${colors.link.inverseHover} transition-colors`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              FAQ
+            </Link>
+
             <Link
               href="/contact"
               className={`mt-4 w-full text-center`}

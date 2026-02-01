@@ -2,12 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { colors } from '../../../config/colors'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import ContactSection from '../../components/ContactSection'
 import { ArrowLeft, Clock, DollarSign, TrendingUp, Zap, Layout, Users, Instagram } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Script from 'next/script'
 import heroImage from './images/hero.jpg'
 import image1 from './images/image1.jpg'
 import image2 from './images/image2.jpg'
@@ -36,10 +35,36 @@ const ImageStrip = ({ images, altPrefix }) => (
     </div>
 )
 
-export default function FerndaleSeasonal() {
+export default function FerndaleSeasonalContent() {
+    // JSON-LD for SEO
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Rapid Vertical Validation: How We Built Ferndale Seasonal in 48 Hours",
+        "image": "https://scottsdevelopment.com/blog/rapid-vertical-validation-ferndale-seasonal/images/hero.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Scott"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Scott's Development",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://scottsdevelopment.com/logo.png"
+            }
+        },
+        "datePublished": "2026-01-28",
+        "description": "How we used LLMs and agentic workflows to architect, build, and monetize a service brand over a single weekend."
+    }
+
     return (
         <main className={`min-h-screen ${colors.bg.primary}`}>
-            <Header />
+            <Script
+                id="article-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-24 px-6 overflow-hidden">
@@ -56,19 +81,15 @@ export default function FerndaleSeasonal() {
                 <div className={`absolute inset-0 z-0 opacity-30 ${colors.bg.gradient} blur-3xl`} />
 
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
-                    <Link
-                        href="/work"
-                        className={`inline-flex items-center gap-2 ${colors.text.secondary} ${colors.interactive.primaryHover} transition-colors mb-8`}
-                    >
-                        <ArrowLeft className="w-4 h-4" />
-                        Back to Work
-                    </Link>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className={`text-4xl md:text-6xl font-bold ${colors.text.heading} mb-6`}
                     >
-                        Ferndale Seasonal
+                        Rapid Vertical Validation: <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-violet-600">
+                            Ferndale Seasonal
+                        </span>
                     </motion.h1>
                     <p className={`text-xl md:text-2xl ${colors.text.secondary} max-w-3xl mx-auto leading-relaxed`}>
                         From Blizzard to Business in 48 Hours: How we leveraged LLMs and rapid deployment to build a profitable service brand over a weekend.
@@ -411,7 +432,6 @@ export default function FerndaleSeasonal() {
                 context={{ page_source: 'Ferndale Seasonal Case Study' }}
             />
 
-            <Footer />
         </main >
     )
 }

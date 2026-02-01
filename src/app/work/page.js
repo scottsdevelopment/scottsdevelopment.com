@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { colors } from '../../config/colors'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Card from '../components/ui/Card'
 import ContactSection from '../components/ContactSection'
 import { Database, Globe, Lock, Layout, Code2, ShoppingCart, Server, Zap, Snowflake, ArrowRight } from 'lucide-react'
@@ -17,7 +15,7 @@ export default function Work() {
             description: "How we leveraged LLMs and rapid deployment to build a profitable service brand over a weekend. See how we apply CTO-level agility to real-world market triggers.",
             tags: ["AI-First Workflow", "Rapid Deployment", "Operations", "Brand Strategy"],
             icon: <Snowflake className="w-6 h-6 text-cyan-600" />,
-            slug: "ferndale-seasonal"
+            href: "/blog/rapid-vertical-validation-ferndale-seasonal"
         },
         {
             title: "Custom Web Applications",
@@ -72,7 +70,6 @@ export default function Work() {
 
     return (
         <main className={`min-h-screen ${colors.bg.primary}`}>
-            <Header />
 
             <section className="relative pt-32 pb-20 px-6 overflow-hidden">
                 <div className={`absolute inset-0 opacity-30 ${colors.bg.gradient} blur-3xl`} />
@@ -100,8 +97,8 @@ export default function Work() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            {study.slug ? (
-                                <Link href={`/work/${study.slug}`} className="block h-full group">
+                            {study.slug || study.href ? (
+                                <Link href={study.href || `/work/${study.slug}`} className="block h-full group">
                                     <Card className="p-8 md:p-12 border-gray-200 group-hover:border-cyan-200 transition-colors h-full">
                                         <div className="flex flex-row gap-4 items-center mb-4">
                                             <div className={`p-3 md:p-4 rounded-xl ${colors.bg.secondary} border border-gray-100 shadow-sm flex-shrink-0`}>
@@ -174,8 +171,6 @@ export default function Work() {
                 subtitle="Tell us about your project goals and timeline."
                 context={{ page_source: 'Work' }}
             />
-
-            <Footer />
         </main>
     )
 }

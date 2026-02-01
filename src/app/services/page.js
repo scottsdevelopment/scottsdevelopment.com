@@ -2,13 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { colors } from '../../config/colors'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Card from '../components/ui/Card'
 import ContactSection from '../components/ContactSection'
 import FractionalEngineeringTable from '../components/FractionalEngineeringTable'
 import { Code2, Server, Shield, Users, Zap, Layout } from 'lucide-react'
-
 
 export default function Services() {
     const services = [
@@ -24,7 +21,7 @@ export default function Services() {
         },
         {
             icon: <Code2 className="w-8 h-8 text-emerald-600" />,
-            title: "Fractional CTO / Staff Engineer",
+            title: "Fractional CTO / Principal Architect",
             description: "Strategic technical leadership on a flexible basis. We handle architecture, team mentoring, and roadmap planning to align technology with your business goals."
         },
         {
@@ -46,7 +43,6 @@ export default function Services() {
 
     return (
         <main className={`min-h-screen ${colors.bg.primary}`}>
-            <Header />
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -57,13 +53,13 @@ export default function Services() {
                         animate={{ opacity: 1, y: 0 }}
                         className={`text-4xl md:text-6xl font-bold ${colors.text.heading} mb-6`}
                     >
-                        Staff Engineering Leadership. <br />
+                        Principal Engineering Leadership. <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-violet-600">
                             On Your Terms.
                         </span>
                     </motion.h1>
                     <p className={`text-xl ${colors.text.secondary} max-w-3xl mx-auto mb-10`}>
-                        Whether you need a Fractional CTO to guide your strategy or a Staff Engineer to crush your backlog, we deliver enterprise-grade results without the overhead.
+                        Whether you need a Fractional CTO to guide your strategy or a Principal Architect to crush your backlog, we deliver enterprise-grade results without the overhead.
                     </p>
                 </div>
             </section>
@@ -95,6 +91,76 @@ export default function Services() {
                 </div>
             </section>
 
+            {/* About Section */}
+            <section className={`py-20 px-6 ${colors.bg.secondary} border-y ${colors.border.subtle}`}>
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className={`text-3xl font-bold ${colors.text.heading} mb-6`}>
+                            About Scott’s Development: <br className="hidden sm:block" />
+                            <span className={colors.text.accent}>High-Stakes Technical Partner</span>
+                        </h2>
+                        <p className={`text-xl ${colors.text.secondary} leading-relaxed`}>
+                            Scott’s Development was founded to solve a specific problem in the Detroit tech ecosystem: the <strong>Value Gap</strong>. Too often, businesses are forced to choose between overpriced agencies that deploy junior talent or full-time executives they aren't ready to hire.
+                        </p>
+                        <p className={`mt-6 text-xl ${colors.text.heading} font-medium`}>
+                            We provide a third way. By operating as a <strong>Principal Architect and Fractional CTO</strong>, we bring 15+ years of Silicon Valley engineering standards directly to your business roadmaps.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
+                        <div>
+                            <h3 className={`text-xl font-bold ${colors.text.heading} mb-4 flex items-center gap-2`}>
+                                <Shield className="w-5 h-5 text-emerald-600" />
+                                The <strong>Adult in the Room</strong> Philosophy
+                            </h3>
+                            <p className={`${colors.text.secondary} mb-4 leading-relaxed`}>
+                                In an era of <strong>vibe coding</strong> and rapid AI prototyping, technical context is easily lost. Without <strong>Engineering Ceremony</strong>—the structured processes of documentation, security auditing, and architectural foresight—today’s shortcuts become tomorrow’s liabilities.
+                            </p>
+                            <p className={`${colors.text.secondary} leading-relaxed`}>
+                                We serve as the technical anchor for your company, ensuring that every move we make is secure, scalable, and—most importantly—aligned with your <strong>North Star revenue goals</strong>.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className={`text-xl font-bold ${colors.text.heading} mb-4 flex items-center gap-2`}>
+                                <Layout className="w-5 h-5 text-violet-600" />
+                                Local Roots, Global Standards
+                            </h3>
+                            <p className={`${colors.text.secondary} leading-relaxed`}>
+                                Based at the <strong>Woodward and 8 Mile</strong> corridor in Ferndale, we are dedicated partners for the Greater Metro Detroit area. While our mindset is shaped by the pace of California startups, our commitment is to the growth and technical modernization of our local business community.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={`p-8 rounded-2xl ${colors.bg.primary} border ${colors.border.subtle} shadow-sm`}>
+                        <h3 className={`text-2xl font-bold ${colors.text.heading} mb-6 text-center`}>
+                            Why the Fractional Model Works
+                        </h3>
+                        <p className={`${colors.text.secondary} mb-8 text-center max-w-2xl mx-auto`}>
+                            We don't believe in <strong>butt-in-seat</strong> billing. We believe in <strong>impact</strong>. By focusing on 10–20 hour high-velocity engagements, we provide:
+                        </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                            <div className="text-center">
+                                <div className="font-bold text-cyan-600 mb-2">Silicon Valley Speed</div>
+                                <div className={`text-sm ${colors.text.secondary}`}>Leveraging agentic workflows to deliver at a <strong>20x pace</strong> compared to traditional manual development.</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="font-bold text-violet-600 mb-2">Direct Principal Access</div>
+                                <div className={`text-sm ${colors.text.secondary}`}>You never deal with a project manager or a junior dev. You deal with the Architect-in-Chief.</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="font-bold text-emerald-600 mb-2">Project Stabilization</div>
+                                <div className={`text-sm ${colors.text.secondary}`}>We specialize in <strong>Project Rescue</strong>—stepping into stalled builds to restore architectural velocity.</div>
+                            </div>
+                        </div>
+
+                        <blockquote className={`border-l-4 ${colors.border.accent} pl-6 italic ${colors.text.heading} text-lg md:text-xl`}>
+                            "Tech should never be a black box or a bottleneck. It should be a transparent, high-performance engine that drives your business forward."
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
             {/* Comparison Table */}
             <section className={`py-24 px-6 ${colors.bg.primary}`}>
                 <div className="max-w-7xl mx-auto">
@@ -112,8 +178,6 @@ export default function Services() {
                 subtitle="Let's discuss how we can help you scale."
                 context={{ page_source: 'Services' }}
             />
-
-            <Footer />
         </main>
     )
 }

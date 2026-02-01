@@ -26,8 +26,11 @@ export default function Footer() {
                 <div className={`${colors.text.onDarkSecondary} text-xs`}>Detroit • Michigan • Remote</div>
               </div>
             </Link>
-            <p className={`mt-4 ${colors.text.onDarkSecondary} text-sm leading-relaxed`}>
-              Staff Engineering Leadership & Fractional CTO Services.
+            <p className={`text-sm ${colors.text.onDarkSecondary} leading-relaxed mb-6`}>
+              Senior software engineering and architectural consulting for businesses that need to scale.
+            </p>
+            <p className={`text-xs ${colors.text.onDarkSecondary} leading-relaxed opacity-80`}>
+              Providing Fractional CTO services to the Greater Metro Detroit area, including Ferndale, Royal Oak, and Detroit. Remote-first, results-driven.
             </p>
 
             <div className={`mt-6 space-y-3 text-sm ${colors.text.onDarkSecondary}`}>
@@ -75,8 +78,9 @@ export default function Footer() {
             <ul className={`space-y-3 text-sm ${colors.text.onDarkSecondary}`}>
               <li><Link href="/" className={`${colors.link.hover} transition-colors`}>Home</Link></li>
               <li><Link href="/work" className={`${colors.link.hover} transition-colors`}>Our Work</Link></li>
+              <li><Link href="/blog" className={`${colors.link.hover} transition-colors`}>Blog</Link></li>
+              <li><Link href="/faq" className={`${colors.link.hover} transition-colors`}>FAQ</Link></li>
               <li><Link href="/services" className={`${colors.link.hover} transition-colors`}>Our Services</Link></li>
-              <li><Link href="/locations/detroit" className={`${colors.link.hover} transition-colors`}>Our Location</Link></li>
               <li><Link href="/contact" className={`${colors.link.hover} transition-colors`}>Contact Us</Link></li>
             </ul>
           </div>
@@ -89,7 +93,7 @@ export default function Footer() {
             <span>&copy; <span id="year"></span> Scott's Development</span>
           </div>
           <div className="flex gap-6">
-            <Link href="/locations/detroit" className={`${colors.link.hover} transition-colors`}>
+            <Link href="/contact" className={`${colors.link.hover} transition-colors`}>
               Web Development Greater Metro Detroit
             </Link>
           </div>

@@ -32,7 +32,7 @@ export default function ValueProp() {
                         More Than Just Code.
                     </h2>
                     <p className={`text-xl ${colors.text.secondary}`}>
-                        We bring senior engineering leadership to your team, whether you need a Fractional CTO or a hands-on Staff Engineer.
+                        We bring senior engineering leadership to your team, whether you need a Fractional CTO or a hands-on Principal Architect.
                     </p>
                 </div>
 

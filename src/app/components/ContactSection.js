@@ -55,47 +55,63 @@ export default function ContactSection({
                             <input key={key} type="hidden" name={key} value={value} />
                         ))}
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-6">
                             <div>
-                                <label htmlFor="name" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
-                                    Name
+                                <label htmlFor="bottleneck" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                    What is your #1 technical or revenue bottleneck?
                                 </label>
-                                <input
-                                    id="name"
-                                    type="text"
-                                    name="name"
+                                <textarea
+                                    id="bottleneck"
+                                    name="bottleneck"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
-                                    placeholder="Jane Doe"
+                                    rows={2}
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all placeholder:text-gray-400"
+                                    placeholder="e.g. My app crashes during peak traffic, or I need to automate a manual process..."
                                 />
                             </div>
-                            <div>
-                                <label htmlFor="email" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
-                                    Email
-                                </label>
-                                <input
-                                    id="email"
-                                    type="email"
-                                    name="email"
-                                    required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
-                                    placeholder="jane@company.com"
-                                />
-                            </div>
-                        </div>
 
-                        <div>
-                            <label htmlFor="message" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
-                                Project Details
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                rows={4}
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
-                                placeholder="Tell us about your goals, timeline, and any specific challenges you're facing..."
-                            />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="name" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                        Name
+                                    </label>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        name="name"
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+                                        placeholder="Jane Doe"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="email" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                        Email
+                                    </label>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        name="email"
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+                                        placeholder="jane@company.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label htmlFor="message" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                    Additional Project Details
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    rows={4}
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+                                    placeholder="Tell us about your goals, timeline, and any specific challenges you're facing..."
+                                />
+                            </div>
                         </div>
 
                         {status && status !== "Thanks for your submission!" && (

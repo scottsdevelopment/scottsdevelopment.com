@@ -18,31 +18,38 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="lg:col-span-7"
         >
-
-
-          <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight ${colors.text.heading} mb-6`}>
-            Staff Engineering <br className="hidden lg:block" />
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight ${colors.text.heading} mb-6`}
+          >
+            Principal Architect & <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-violet-600">
-              Leadership.
+              Fractional CTO.
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className={`text-xl sm:text-2xl ${colors.text.body} max-w-2xl leading-relaxed mb-8`}>
-            We specialize in modernizing legacy systems, scaling enterprise platforms, and mentoring high-performance teams.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className={`text-xl sm:text-2xl ${colors.text.body} mx-auto leading-relaxed mb-8`}
+          >
+            Engineering Leadership that Drives Revenue. Modernizing legacy systems and rescuing stalled projects for Detroit startups.
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-wrap justify-start items-center gap-6"
+          >
             <Link href="/contact">
-              <Button variant="primary" className="h-14 px-8 text-lg shadow-lg shadow-cyan-500/20">
-                Book a Discovery Call
+              <Button variant="primary" className="h-14 px-8 text-lg shadow-lg shadow-cyan-500/20 font-bold">
+                Get a Free 1-Hour Debt Audit
               </Button>
             </Link>
-            <Link href="/work">
-              <Button variant="outline" className="h-14 px-8 text-lg bg-white/80 backdrop-blur-sm">
-                View Experience
-              </Button>
-            </Link>
-          </div>
+          </motion.div>
 
           <div className="mt-12 flex flex-wrap items-center gap-8 text-sm font-medium text-gray-500">
             <div className="flex items-center gap-2">
@@ -85,9 +92,9 @@ export default function Hero() {
                 <div className="flex gap-2">
                 </div>
                 <div className={`mt-2 ${colors.text.secondary}`}>
-                  <span className="text-amber-500">a1b2c3d</span> feat: Scale VA benefits platform to 100k+ users
-                  <br /><span className="text-amber-500">e5f6g7h</span> fix: Zero-downtime migration for healthcare SaaS
-                  <br /><span className="text-amber-500">i9j0k1l</span> chore: Mentor junior devs to senior level
+                  <span className="text-amber-500">r3scu3d</span> status: Recovered multi-million dollar project
+                  <br /><span className="text-amber-500">opt1m1z</span> feat: Automated 80% of manual workflows for retail partner
+                  <br /><span className="text-amber-500">arch1tct</span> chore: Implementing ceremony & structure for agentic workflows
                 </div>
 
                 <div className="flex gap-2 mt-4">
@@ -102,7 +109,7 @@ export default function Hero() {
           <div className="mt-8 flex justify-center">
             <div className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium ${colors.bg.secondary} ${colors.text.accent} shadow-sm ring-1 ring-gray-200`}>
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 mr-2"></span>
-              Available for Fractional & Full-Time Roles
+              Open for Fractional Roles (Q1 2026)
             </div>
           </div>
         </motion.div>
