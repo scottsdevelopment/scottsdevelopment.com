@@ -1,0 +1,2 @@
+:HL["https://scottsdevelopment.com/_next/static/chunks/34b229fa4482e107.css","style"]
+0:{"buildId":"WQBBBSbuwVRQSeaTdH3r7","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
