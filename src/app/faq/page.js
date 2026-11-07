@@ -10,6 +10,31 @@ import { useState } from 'react'
 
 const faqs = [
     {
+        category: "Getting Started & Pricing",
+        items: [
+            {
+                question: "I just need a simple website. Is that too small for you?",
+                answer: "No. That is where most engagements start: a website or landing page, a contact form, and analytics with Google Search Console set up so you can see who finds you. Staying there is fine. If you later want a login, or logins plus a CRM to track jobs, we add it one step at a time."
+            },
+            {
+                question: "Why not just use AI tools myself?",
+                answer: "You can, and for some things you should. What you are paying us for is my time, my costs (running the AI agents, hosting, tools) and materials, plus the knowledge. I have the engineering answers, the prompts and the workflows, and I know which platforms are proven and which are hype. I know how to build this well, effectively and fast, and how to keep it running after launch."
+            },
+            {
+                question: "How does pricing work?",
+                answer: "Three shapes: a fixed price for a fixed-scope website, a day rate or project quote for technical engagements and Fractional CTO time, and a flat monthly fee for the care plan. Every price covers time, the cost of the agents and hosting, and the expertise. Ask and you will get a plain number before any work starts."
+            },
+            {
+                question: "What is the care plan?",
+                answer: "For any site we build or take over: hosting on AWS with SSL and backups, dependency and security updates, small content changes, and a short monthly report from analytics and Search Console that says what happened and what to do next. Most sites die from neglect, not bugs; this is the boring work that prevents it."
+            },
+            {
+                question: "What does 'we manage the agents for you' mean?",
+                answer: "Development today is less about typing code and more about directing AI agents so the work gets done fast and cheaply on proven platforms. We pick the foundation, write the prompts and workflows, check licenses, and review every change before it ships. You describe the features; we run the process end to end."
+            }
+        ]
+    },
+    {
         category: "General & Strategic",
         items: [
             {
@@ -132,7 +157,7 @@ export default function FAQ() {
                         </span>
                     </h1>
                     <p className={`text-xl ${colors.text.secondary} max-w-2xl mx-auto`}>
-                        Answers about Fractional CTO services, Project Rescue, and how we achieve 20x development speed for Detroit startups.
+                        Answers about getting started, pricing, the care plan, Fractional CTO services, Project Rescue, and how we use AI agents to build fast for Metro Detroit businesses.
                     </p>
                 </div>
             </section>

@@ -1,4 +1,9 @@
-# Design mockups (not wired into the app)
+# Design mockups and content inventory
+
+**Superseded.** The owner chose to evolve the current site rather than pick one of the three directions below. The integrated build lives in the Next.js app on this branch; see `INVENTORY.md` for the keep / merge / edit decisions and `shots-v2/` for screenshots of every page.
+
+**Superseded.** The owner chose to evolve the current site rather than pick one of the three directions below. The integrated build lives in the Next.js app on this branch; see `INVENTORY.md` for the keep / merge / edit decisions and `shots-v2/` for screenshots of every page.
+
 
 Static HTML/CSS explorations for the redesign. Rebuild with:
 

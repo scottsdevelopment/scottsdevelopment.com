@@ -1,98 +1,146 @@
 'use client'
 
 import { useFormspree } from '../hooks/useFormspree'
-import { owner } from '../../content/site'
+import { colors } from '../../config/colors'
 import Button from './ui/Button'
-
-const field =
-  'w-full rounded-md border border-rule bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink-mute focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/30'
+import { motion } from 'framer-motion'
+import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 
 export default function ContactSection({
-  title = 'Tell me what you need',
-  subtitle = 'A new site, a data problem, a product that needs a second pair of hands, or just hosting. I reply to every message myself.',
-  formId = 'xbljqeop',
-  context = {},
+    title = "Let's Build Something Great",
+    subtitle = "Ready to modernize your legacy systems or build a new web application? Tell us about your project.",
+    formId = "xbljqeop",
+    context = {}
 }) {
-  const { handleSubmit, status, submitting } = useFormspree(formId)
-  const sent = status === 'Thanks for your submission!'
+    const { handleSubmit, status, submitting } = useFormspree(formId)
 
-  return (
-    <section id="contact" className="border-t border-rule bg-paper">
-      <div className="mx-auto grid max-w-site gap-8 px-5 py-16 sm:px-8 md:grid-cols-12 md:gap-12 md:py-24">
-        <div className="md:col-span-4">
-          <h2 className="font-heading text-3xl font-semibold leading-tight tracking-tight text-ink md:text-4xl">{title}</h2>
-          <p className="mt-4 max-w-prose text-[17px] leading-relaxed text-ink-soft">{subtitle}</p>
-          <p className="mt-6 text-[15px] text-ink-soft">
-            Prefer email?{' '}
-            <a className="link" href={`mailto:${owner.email}`}>
-              {owner.email}
-            </a>
-          </p>
-        </div>
+    if (status === "Thanks for your submission!") {
+        return (
+            <section className={`py-24 ${colors.bg.dark}`}>
+                <div className="max-w-3xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="bg-white p-12 rounded-2xl shadow-sm border border-gray-100"
+                    >
+                        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <CheckCircle className="w-8 h-8" />
+                        </div>
+                        <h2 className={`text-3xl font-bold ${colors.text.heading} mb-4`}>Message Received</h2>
+                        <p className={`text-xl ${colors.text.secondary}`}>
+                            Thanks for reaching out. We'll be in touch shortly to discuss your project.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+        )
+    }
 
-        <div className="md:col-span-7 md:col-start-6">
-          {sent ? (
-            <div role="status" className="rounded-lg border border-moss/30 bg-moss-tint p-6">
-              <h3 className="font-heading text-xl font-semibold text-ink">Message sent</h3>
-              <p className="mt-2 text-[15px] text-ink-soft">
-                Thanks. I'll read it and get back to you, usually within a business day.
-              </p>
+    return (
+        <section className={`py-24 px-6 ${colors.bg.dark}`} id="contact">
+            <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className={`text-3xl md:text-4xl font-bold ${colors.text.onDark} mb-4`}>
+                        {title}
+                    </h2>
+                    <p className={`text-xl ${colors.text.onDarkSecondary}`}>
+                        {subtitle}
+                    </p>
+                </div>
+
+                <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Hidden context fields */}
+                        {Object.entries(context).map(([key, value]) => (
+                            <input key={key} type="hidden" name={key} value={value} />
+                        ))}
+
+                        <div className="space-y-6">
+                            <div>
+                                <label htmlFor="bottleneck" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                    What is your #1 technical or revenue bottleneck?
+                                </label>
+                                <textarea
+                                    id="bottleneck"
+                                    name="bottleneck"
+                                    required
+                                    rows={2}
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all placeholder:text-gray-400"
+                                    placeholder="e.g. My app crashes during peak traffic, or I need to automate a manual process..."
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label htmlFor="name" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                        Name
+                                    </label>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        name="name"
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+                                        placeholder="Jane Doe"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="email" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                        Email
+                                    </label>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        name="email"
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+                                        placeholder="jane@company.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label htmlFor="message" className={`block text-sm font-medium ${colors.text.heading} mb-2`}>
+                                    Additional Project Details
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    rows={4}
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+                                    placeholder="Tell us about your goals, timeline, and any specific challenges you're facing..."
+                                />
+                            </div>
+                        </div>
+
+                        {status && status !== "Thanks for your submission!" && (
+                            <div className="p-4 bg-red-50 text-red-600 rounded-lg flex items-center gap-2">
+                                <AlertCircle className="w-5 h-5" />
+                                <span>{status}</span>
+                            </div>
+                        )}
+
+                        <div className="flex justify-end">
+                            <Button
+                                type="submit"
+                                variant="primary"
+                                className="w-full md:w-auto h-14 px-8 text-lg"
+                                disabled={submitting}
+                            >
+                                {submitting ? (
+                                    <span className="flex items-center gap-2">
+                                        <Loader2 className="w-5 h-5 animate-spin" />
+                                        Sending...
+                                    </span>
+                                ) : (
+                                    "Send Message"
+                                )}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
-              {Object.entries(context).map(([key, value]) => (
-                <input key={key} type="hidden" name={key} value={value} />
-              ))}
-
-              <div>
-                <label htmlFor="bottleneck" className="mb-1.5 block text-sm font-medium text-ink">
-                  What's the problem you want solved?
-                </label>
-                <textarea
-                  id="bottleneck"
-                  name="bottleneck"
-                  required
-                  rows={3}
-                  className={field}
-                  placeholder="e.g. Our site is slow and nobody can find it on Google, or we have data in five places and no way to see it together."
-                />
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
-                    Name
-                  </label>
-                  <input id="name" type="text" name="name" required autoComplete="name" className={field} />
-                </div>
-                <div>
-                  <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink">
-                    Email
-                  </label>
-                  <input id="email" type="email" name="email" required autoComplete="email" className={field} />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
-                  Anything else: timeline, budget, links
-                </label>
-                <textarea id="message" name="message" required rows={4} className={field} />
-              </div>
-
-              {status && !sent && (
-                <p role="alert" className="rounded-md border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-sm text-rose-800">
-                  {status}
-                </p>
-              )}
-
-              <Button type="submit" variant="primary" className="px-7 py-3 text-base" disabled={submitting}>
-                {submitting ? 'Sending…' : 'Send message'}
-              </Button>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+    )
 }

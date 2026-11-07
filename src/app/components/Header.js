@@ -2,82 +2,79 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { colors } from '../../config/colors'
 import LogoIcon from './LogoIcon'
-import { hasHealthcareContent } from '../../content/healthcare'
+import Button from './ui/Button'
 
 const links = [
-  { href: '/work', label: 'Work' },
-  { href: '/services', label: 'Services' },
-  ...(hasHealthcareContent() ? [{ href: '/#healthcare', label: 'Healthcare' }] : []),
-  { href: '/blog', label: 'Writing' },
+  { href: '/services', label: 'Our Services' },
+  { href: '/work', label: 'Our Work' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact Us' },
 ]
 
 export default function Header() {
-  const [open, setOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-site items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <LogoIcon size="w-8 h-8" />
-          <span className="font-heading text-lg font-semibold tracking-tight text-ink">
-            Scott's Development
-          </span>
+    <header className={`sticky top-0 z-40 ${colors.bg.header} backdrop-blur-md border-b ${colors.border.inverse}`}>
+      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3">
+          <LogoIcon />
+          <span className={`font-semibold tracking-tight ${colors.text.inverse}`}>Scott's Development</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+        <nav className={`hidden md:flex items-center gap-8 ${colors.text.inverse}`} aria-label="Primary">
           {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-[15px] text-ink-soft transition-colors hover:text-ink"
-            >
+            <Link key={l.href} href={l.href} className={`${colors.link.inverse} ${colors.link.inverseHover} font-medium transition-colors`}>
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="rounded-full bg-ink px-4 py-1.5 text-[15px] font-medium text-paper transition-colors hover:bg-moss-deep"
-          >
-            Contact
-          </Link>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="rounded p-2 text-ink md:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-        >
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M6 18L18 6M6 6l12 12" />
+        <div className="flex items-center gap-6">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`md:hidden p-2 rounded hover:bg-gray-800`}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${colors.text.inverse}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 7h16M4 12h16M4 17h16" />
+              <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${colors.text.inverse}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             )}
-          </svg>
-        </button>
+          </button>
+        </div>
       </div>
 
-      <div id="mobile-nav" hidden={!open} className="border-t border-rule bg-paper md:hidden">
-        <nav aria-label="Primary mobile" className="ledger mx-auto flex max-w-site flex-col px-5 sm:px-8">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="py-3.5 text-base text-ink"
-              onClick={() => setOpen(false)}
-            >
-              {l.label}
+      {/* Mobile Navigation Menu */}
+      <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'max-h-[28rem] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className={`px-6 py-4 ${colors.bg.header} border-b ${colors.border.inverse}`}>
+          <nav className={`flex flex-col space-y-4 ${colors.text.inverse}`} aria-label="Primary mobile">
+            {links.filter((l) => l.href !== '/contact').map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`py-2 ${colors.link.inverse} ${colors.link.inverseHover} transition-colors`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link href="/contact" className="mt-4 w-full text-center" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button variant="primary" className="w-full justify-center">
+                Connect with us
+              </Button>
             </Link>
-          ))}
-          <Link href="/contact" className="py-3.5 text-base font-medium text-moss" onClick={() => setOpen(false)}>
-            Contact
-          </Link>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   )

@@ -5,6 +5,9 @@ import { colors } from '../../config/colors'
 import Card from '../components/ui/Card'
 import ContactSection from '../components/ContactSection'
 import FractionalEngineeringTable from '../components/FractionalEngineeringTable'
+import Process from '../components/Process'
+import Offers from '../components/Offers'
+import { fractionalCto } from '../../content/site'
 import { Code2, Server, Shield, Users, Zap, Layout } from 'lucide-react'
 
 export default function Services() {
@@ -27,7 +30,7 @@ export default function Services() {
         {
             icon: <Shield className="w-8 h-8 text-amber-600" />,
             title: "Compliance & Security",
-            description: "Building HIPAA, PCI, and SOC2 compliant applications for healthcare, government, and enterprise sectors. We prioritize data integrity and regulatory adherence."
+            description: "We build for the security and regulatory requirements of healthcare, government and enterprise work: access controls, audit trails, data integrity and the documentation your auditors ask for."
         },
         {
             icon: <Users className="w-8 h-8 text-blue-600" />,
@@ -59,10 +62,13 @@ export default function Services() {
                         </span>
                     </motion.h1>
                     <p className={`text-xl ${colors.text.secondary} max-w-3xl mx-auto mb-10`}>
-                        Whether you need a Fractional CTO to guide your strategy or a Principal Architect to crush your backlog, we deliver enterprise-grade results without the overhead.
+                        Start with a website and analytics. Grow into custom software when you want to. Bring in a Fractional CTO for the decisions. We manage the AI agents that do the building, and an engineer with 15+ years reviews every step.
                     </p>
                 </div>
             </section>
+
+            <Process tone="white" />
+            <Offers tone="primary" />
 
             {/* Service Cards */}
             <section className="py-16 px-6 bg-white">
@@ -129,6 +135,14 @@ export default function Services() {
                                 Based at the <strong>Woodward and 8 Mile</strong> corridor in Ferndale, we are dedicated partners for the Greater Metro Detroit area. While our mindset is shaped by the pace of California startups, our commitment is to the growth and technical modernization of our local business community.
                             </p>
                         </div>
+                    </div>
+
+                    <div className={`mb-12 p-8 md:p-10 rounded-2xl bg-white border ${colors.border.subtle} shadow-sm`}>
+                        <h3 className={`text-2xl font-bold ${colors.text.heading} mb-4`}>Fractional CTO, in plain words</h3>
+                        <blockquote className={`border-l-4 ${colors.border.accent} pl-6 text-xl md:text-2xl ${colors.text.heading} font-medium leading-relaxed`}>
+                            &ldquo;{fractionalCto.quote}&rdquo;
+                        </blockquote>
+                        <p className={`mt-6 ${colors.text.secondary} text-lg leading-relaxed`}>{fractionalCto.body}</p>
                     </div>
 
                     <div className={`p-8 rounded-2xl ${colors.bg.primary} border ${colors.border.subtle} shadow-sm`}>

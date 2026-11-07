@@ -37,7 +37,7 @@ export default function Contact() {
                         </span>
                     </motion.h1>
                     <p className={`text-xl ${colors.text.secondary} max-w-3xl mx-auto`}>
-                        Whether you need a Fractional CTO, a Principal Architect, or a team to modernize your legacy system, we're ready to help.
+                        A first website, a care plan, custom software, or a Fractional CTO for the decisions ahead: tell us where you are and we'll meet you there.
                     </p>
                 </div>
             </section>
@@ -178,7 +178,7 @@ export default function Contact() {
                                     <div>
                                         <h3 className="text-lg font-semibold text-gray-900 mb-1">Availability</h3>
                                         <p className="text-lg text-gray-600">
-                                            Accepting new fractional clients for Q1 2026. We are seeking opportunities to partner with local businesses to help them grow their technical capabilities with a 10-20 hour budget.
+                                            Accepting new fractional clients. We are seeking opportunities to partner with local businesses to help them grow their technical capabilities with a 10-20 hour budget.
                                         </p>
                                     </div>
                                 </div>
@@ -237,8 +237,11 @@ export default function Contact() {
                                         name="subject"
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-shadow"
                                     >
-                                        <option>Fractional Engineering Inquiry</option>
+                                        <option>Website Build (Fixed Scope)</option>
+                                        <option>Care Plan (Hosting, Updates, Monthly Report)</option>
+                                        <option>Fractional Engineering / CTO Inquiry</option>
                                         <option>Legacy Modernization Project</option>
+                                        <option>Custom Software, CRM or Automation</option>
                                         <option>Other</option>
                                     </select>
 

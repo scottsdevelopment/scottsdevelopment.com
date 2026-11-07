@@ -1,149 +1,157 @@
 /**
- * Centralized Color Configuration (light theme)
- *
- * Tokens are Tailwind class strings so older pages (blog posts, FAQ) pick up
- * the palette without being rewritten. The palette itself lives in
- * tailwind.config.js: ink (text), paper (page), moss (single accent).
+ * Centralized Color Configuration
+ * 
+ * Business / SaaS / Web Development Agency Theme (Light Mode)
+ * --------------------------------------------------
+ * - Professional light-mode base for resumes, marketing, and client-facing UIs
+ * - Cyan = trust + tech
+ * - Violet = innovation + creativity
+ * - Softer neutrals and subtle contrast
  */
 
 export const colors = {
   // Background layers
   bg: {
-    primary: 'bg-paper',
-    secondary: 'bg-white',
-    hover: 'bg-paper-deep',
-    elevated: 'bg-white',
-    overlay: 'bg-ink/50',
-    accent: 'bg-moss',
-    gradient: 'bg-gradient-to-br from-moss-tint via-paper to-paper',
-    primary80: 'bg-paper/80',
-    secondary40: 'bg-paper/40',
-    header: 'bg-paper/90',
-    footer: 'bg-ink',
-    contrast: 'bg-paper-deep',
-    dark: 'bg-paper-deep',
-    contrastBrand: 'bg-moss-tint',
-    warningLight: 'bg-amber-50',
-    successLight: 'bg-emerald-50',
-    infoLight: 'bg-sky-50',
-    subtle: 'bg-paper-deep',
-    overlayBrand: 'bg-moss/10',
+    primary: 'bg-gray-50',              // #F9FAFB - clean page background
+    secondary: 'bg-white',              // #FFFFFF - cards, elevated surfaces
+    hover: 'bg-gray-100',               // #F3F4F6 - hover effects
+    elevated: 'bg-white',               // for modals / card layers
+    overlay: 'bg-gray-900/50',          // subtle dark overlay for modals
+    accent: 'bg-cyan-600',              // CTA background (trust + energy)
+    gradient: 'bg-gradient-to-br from-cyan-400 via-sky-500 to-violet-500', // same brand energy
+    // Opacity variants
+    primary80: 'bg-white/80',           // 80% opacity for header backdrop
+    secondary40: 'bg-gray-50/40',       // 40% opacity for footer
+    header: 'bg-white/80',              // Clean glassmorphism header
+    footer: 'bg-slate-200 shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]', // Deeper anchor (slate-200)
+    contrast: 'bg-gray-50',             // Subtle contrast
+    dark: 'bg-slate-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.04)]',   // Mid-tone step (slate-100) vs gray-50
+    contrastBrand: 'bg-cyan-50',        // Brand colored section background
+    warningLight: 'bg-amber-50',        // Light warning background
+    successLight: 'bg-emerald-50',      // Light success background
+    infoLight: 'bg-sky-50',             // Light info background
+    subtle: 'bg-gray-100',              // Subtle background (placeholders)
+    overlayBrand: 'bg-cyan-900/10',     // Brand tinted overlay
   },
 
   // Text hierarchy
   text: {
-    heading: 'text-ink',
-    body: 'text-ink-soft',
-    secondary: 'text-ink-soft',
-    muted: 'text-ink-mute',
-    accent: 'text-moss',
-    dark: 'text-white',
-    inverse: 'text-ink',
-    inverseSecondary: 'text-ink-soft',
-    onDark: 'text-ink',
-    onDarkSecondary: 'text-ink-soft',
+    heading: 'text-gray-900',           // #111827 - primary heading
+    body: 'text-gray-800',              // strong readable paragraph
+    secondary: 'text-gray-600',         // subtext
+    muted: 'text-gray-500',             // metadata / placeholders
+    accent: 'text-cyan-600',            // links / callouts
+    dark: 'text-white',                 // text on dark buttons
+    inverse: 'text-gray-900',           // text on contrast backgrounds
+    inverseSecondary: 'text-gray-600',  // secondary text on contrast backgrounds
+    onDark: 'text-slate-900',           // text on emphasis background
+    onDarkSecondary: 'text-slate-600',  // secondary text on emphasis background
   },
 
   // Rich content blocks
   copy: {
-    primary: 'text-ink',
-    secondary: 'text-ink-soft',
-    tertiary: 'text-ink-soft',
-    muted: 'text-ink-mute',
-    accent: 'text-moss',
+    primary: 'text-gray-900',
+    secondary: 'text-gray-700',
+    tertiary: 'text-gray-600',
+    muted: 'text-gray-500',
+    accent: 'text-cyan-600',
   },
 
   // Borders
   border: {
-    primary: 'border-rule',
-    secondary: 'border-ink-mute',
-    subtle: 'border-rule',
-    primary60: 'border-rule/60',
-    inverse: 'border-rule',
-    onDark: 'border-rule',
-    accent: 'border-moss',
-    warning: 'border-amber-400',
-    success: 'border-emerald-400',
-    info: 'border-sky-400',
+    primary: 'border-gray-200',         // light dividers
+    secondary: 'border-gray-300',       // stronger emphasis
+    subtle: 'border-gray-100',          // card outlines
+    // Opacity variants
+    primary60: 'border-gray-200/60',    // 60% opacity for footer border
+    inverse: 'border-gray-300',         // border for contrast backgrounds
+    onDark: 'border-slate-200',         // border for emphasis backgrounds
+    accent: 'border-cyan-500',          // brand emphasis borders
+    warning: 'border-amber-400',        // warning borders
+    success: 'border-emerald-400',      // success borders
+    info: 'border-sky-400',             // info borders
   },
 
   // Interactive
   interactive: {
-    primary: 'text-moss',
-    secondary: 'text-moss-deep',
-    hover: 'hover:text-moss-deep',
-    primaryHover: 'hover:text-moss-deep',
-    focus: 'focus:text-moss-deep',
-    disabled: 'text-ink-mute',
+    primary: 'text-cyan-600',
+    secondary: 'text-violet-600',
+    hover: 'hover:text-violet-500',
+    primaryHover: 'hover:text-cyan-500',
+    focus: 'focus:text-cyan-600',
+    disabled: 'text-gray-400',
   },
 
-  // Link states
+  // Link states (for navigation and footer links)
   link: {
-    default: 'text-ink-soft',
-    hover: 'hover:text-ink',
-    focus: 'focus:text-ink',
+    default: 'text-gray-500',
+    hover: 'hover:text-gray-900',
+    focus: 'focus:text-gray-900',
     underline: 'underline',
     underlineHover: 'hover:underline',
-    inverse: 'text-ink-soft',
-    inverseHover: 'hover:text-ink',
+    inverse: 'text-gray-600',
+    inverseHover: 'hover:text-gray-900',
   },
 
-  // Buttons
+  // Buttons (CTA system)
   button: {
     primary:
-      'bg-ink text-paper hover:bg-moss-deep focus:ring-2 focus:ring-moss focus:ring-offset-2 transition-colors',
+      'bg-cyan-600 text-white hover:bg-cyan-500 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-1 transition-colors',
     secondary:
-      'bg-moss text-white hover:bg-moss-deep focus:ring-2 focus:ring-moss focus:ring-offset-2 transition-colors',
+      'bg-gray-900 text-white hover:bg-gray-800 focus:ring-1 focus:ring-gray-900 shadow-sm',
     accent:
-      'bg-moss text-white hover:bg-moss-deep focus:ring-2 focus:ring-moss transition-colors',
+      'bg-violet-600 text-white hover:bg-violet-500 focus:ring-2 focus:ring-violet-500 transition-colors',
     ghost:
-      'text-moss hover:text-moss-deep hover:bg-paper-deep focus:ring-1 focus:ring-moss',
-    disabled: 'bg-paper-deep text-ink-mute cursor-not-allowed',
+      'text-cyan-600 hover:text-cyan-500 hover:bg-gray-100 focus:ring-1 focus:ring-cyan-500',
+    disabled:
+      'bg-gray-100 text-gray-400 cursor-not-allowed',
   },
 
   // Card components
   card: {
-    container: 'bg-white border border-rule rounded-lg',
-    heading: 'text-ink',
-    body: 'text-ink-soft',
-    muted: 'text-ink-mute',
-    highlight: 'text-moss',
+    container:
+      'bg-white border border-gray-200 rounded-2xl shadow-sm',
+    heading: 'text-gray-900',
+    body: 'text-gray-700',
+    muted: 'text-gray-500',
+    highlight: 'text-cyan-600',
   },
 
   // Section layout
   section: {
-    container: 'bg-paper border-t border-rule',
-    heading: 'text-ink',
-    body: 'text-ink-soft',
-    muted: 'text-ink-mute',
-    accent: 'text-moss',
+    container:
+      'bg-gray-50 border-t border-gray-200',
+    heading: 'text-gray-900',
+    body: 'text-gray-700',
+    muted: 'text-gray-500',
+    accent: 'text-cyan-600',
   },
 
   // Status indicators
   status: {
-    success: 'text-emerald-700',
-    warning: 'text-amber-700',
-    error: 'text-rose-700',
-    info: 'text-sky-700',
+    success: 'text-emerald-600',       // #059669
+    warning: 'text-amber-600',         // #D97706
+    error: 'text-rose-600',            // #E11D48
+    info: 'text-sky-600',              // #0284C7
   },
 
   // Highlights (banners, callouts)
   highlight: {
-    primary: 'bg-moss-tint text-moss-deep border border-moss/20',
-    secondary: 'bg-paper-deep text-ink border border-rule',
-    success: 'bg-emerald-50 text-emerald-800 border border-emerald-100',
+    primary: 'bg-cyan-50 text-cyan-700 border border-cyan-100',
+    secondary: 'bg-violet-50 text-violet-700 border border-violet-100',
+    success: 'bg-emerald-50 text-emerald-700 border border-emerald-100',
   },
 
   // Brand specifics
   brand: {
-    bullet: 'bg-moss',
+    bullet: 'bg-cyan-500',
   },
 
   // Feature specific themes
   features: {
-    design: { bg: 'bg-moss-tint', text: 'text-moss-deep' },
-    ai: { bg: 'bg-paper-deep', text: 'text-ink' },
-    marketing: { bg: 'bg-amber-50', text: 'text-amber-700' },
+    design: { bg: 'bg-blue-50', text: 'text-blue-600' },
+    ai: { bg: 'bg-purple-50', text: 'text-purple-600' },
+    marketing: { bg: 'bg-pink-50', text: 'text-pink-600' },
   },
 };
 

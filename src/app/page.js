@@ -1,30 +1,37 @@
 import Hero from './components/Hero'
-import Products from './components/Products'
+import AgencyAlternative from './components/AgencyAlternative'
+import Process from './components/Process'
+import Offers from './components/Offers'
+import HybridModel from './components/HybridModel'
+import ServicesOverview from './components/ServicesOverview'
+import IndustryWork from './components/IndustryWork'
 import Expertise from './components/Expertise'
-import GithubShowcase from './components/GithubShowcase'
 import Healthcare from './components/Healthcare'
-import CarePlan from './components/CarePlan'
+import Background from './components/Background'
 import Writing from './components/Writing'
 import ContactSection from './components/ContactSection'
 
 export const metadata = {
   title: {
-    absolute: "Scott's Development | Websites and small software for local businesses",
+    absolute: "Principal Architect & Fractional CTO | Engineering Leadership | Scott's Development"
   },
-  description:
-    'Websites and small software for local businesses from a full-stack engineer in Ferndale, Michigan: fixed-scope builds, quick technical engagements, and a monthly care plan with hosting and analytics.',
+  description: 'Marketing and development for Metro Detroit companies. We manage the AI agents that build your website, software and CRM on proven platforms, and provide fractional CTO leadership backed by 15+ years of engineering.',
 }
 
 export default function Home() {
   return (
-    <main id="main">
+    <main className="min-h-screen bg-white">
       <Hero />
-      <Products />
-      <Expertise />
-      <GithubShowcase limit={8} compact />
-      <Healthcare />
-      <CarePlan />
-      <Writing />
+      <AgencyAlternative />
+      <Process />
+      <Offers />
+      <HybridModel />
+      <ServicesOverview />
+      <IndustryWork limit={6} />
+      <Expertise tone="white" />
+      <Healthcare tone="primary" />
+      <Background tone="white" />
+      <Writing tone="primary" />
       <ContactSection context={{ page_source: 'Home' }} />
     </main>
   )

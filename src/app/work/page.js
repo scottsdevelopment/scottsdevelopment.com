@@ -6,11 +6,14 @@ import Card from '../components/ui/Card'
 import ContactSection from '../components/ContactSection'
 import { Database, Globe, Lock, Layout, Code2, ShoppingCart, Server, Zap, Snowflake, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import IndustryWork from '../components/IndustryWork'
+import Products from '../components/Products'
+import GithubShowcase from '../components/GithubShowcase'
 
 export default function Work() {
     const caseStudies = [
         {
-            title: "Ferndale Seasonal: From Blizzard to Business in 48 Hours",
+            title: "A Seasonal Lawn & Snow Brand: From Blizzard to Business in 48 Hours",
             impact: "$300+ net revenue & validated seasonal blueprint in <48h.",
             description: "How we leveraged LLMs and rapid deployment to build a profitable service brand over a weekend. See how we apply CTO-level agility to real-world market triggers.",
             tags: ["AI-First Workflow", "Rapid Deployment", "Operations", "Brand Strategy"],
@@ -25,9 +28,9 @@ export default function Work() {
             icon: <Code2 className="w-6 h-6 text-cyan-600" />
         },
         {
-            title: "Federal Government Benefits Platform",
-            impact: "Streamlined benefits processing for 100k+ veterans.",
-            description: "In a high-stakes modernization initiative for the Department of Veterans Affairs, we led the transition of a critical pension system from legacy infrastructure to a robust microservices architecture. Utilizing React and Ruby on Rails, we engineered a solution that not only streamlined benefits processing for over 100,000 veterans but also ensured strict adherence to Section 508 accessibility standards and federal security compliance.",
+            title: "Federal Benefits Platform",
+            impact: "Streamlined benefits processing for 100k+ beneficiaries.",
+            description: "In a high-stakes modernization initiative for a federal benefits agency, we led the transition of a critical pension system from legacy infrastructure to a robust microservices architecture. Utilizing React and Ruby on Rails, we engineered a solution that not only streamlined benefits processing for over 100,000 beneficiaries but also ensured strict adherence to Section 508 accessibility standards and federal security compliance.",
             tags: ["React", "Ruby on Rails", "Microservices", "Accessibility"],
             icon: <Globe className="w-6 h-6 text-blue-600" />
         },
@@ -79,15 +82,26 @@ export default function Work() {
                         animate={{ opacity: 1, y: 0 }}
                         className={`text-4xl md:text-6xl font-bold ${colors.text.heading} mb-6`}
                     >
-                        Selected Engagements.
+                        Our Work.
                     </motion.h1>
                     <p className={`text-xl ${colors.text.secondary} max-w-3xl mx-auto`}>
-                        A track record of modernizing legacy systems, scaling platforms, and delivering mission-critical software for government and enterprise.
+                        Small-business sites and CRMs, our own products, and a track record of modernizing legacy systems and delivering mission-critical software for government, healthcare and enterprise. Names are left out on purpose; the work is real.
                     </p>
                 </div>
             </section>
 
-            <section className="py-12 px-6">
+            <IndustryWork
+                tone="white"
+                title="Small businesses we build for."
+                lede="Cleaning, moving, lawn care and snow removal, repair services, marketing firms. Websites first, then logins, CRMs and automation as each business wants them."
+            />
+            <Products tone="primary" />
+
+            <section className="py-12 px-6 bg-white border-t border-gray-100">
+                <div className="max-w-7xl mx-auto text-center mb-12 pt-8">
+                    <h2 className={`text-3xl font-bold ${colors.text.heading} mb-4`}>Selected Engagements.</h2>
+                    <p className={`text-xl ${colors.text.secondary} max-w-3xl mx-auto`}>Larger systems for government, healthcare, retail and logistics.</p>
+                </div>
                 <div className="max-w-7xl mx-auto grid grid-cols-1 gap-12">
                     {caseStudies.map((study, index) => (
                         <motion.div
@@ -165,6 +179,8 @@ export default function Work() {
                     ))}
                 </div>
             </section>
+
+            <GithubShowcase tone="primary" />
 
             <ContactSection
                 title="Start Your Project"
