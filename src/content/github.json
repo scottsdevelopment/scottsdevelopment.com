@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-11-07T18:04:17.470Z",
+  "profile": {
+    "login": "scottsdevelopment",
+    "url": "https://github.com/scottsdevelopment",
+    "publicRepos": 55
+  },
+  "repos": [
+    {
+      "name": "django-aws-etl",
+      "description": "A robust, event-driven ETL (Extract, Transform, Load) pipeline built with Django, Celery, and AWS services (simulated locally via LocalStack). This project demonstrates a scalable architecture for ingesting healthcare data (e.g., Pharmacy Claims, Audit Records) using S3 event notifications and SQS queues.",
+      "url": "https://github.com/scottsdevelopment/django-aws-etl",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2026-01-13T01:38:42Z",
+      "topics": [
+        "aws",
+        "celery",
+        "django",
+        "etl",
+        "healthcare",
+        "s3",
+        "sqs"
+      ]
+    },
+    {
+      "name": "fhir-summary-gpt",
+      "description": "",
+      "url": "https://github.com/scottsdevelopment/fhir-summary-gpt",
+      "homepage": null,
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2025-07-07T02:43:27Z",
+      "topics": []
+    },
+    {
+      "name": "agentic-nestjs-react-postgres",
+      "description": "Agent AI + NestJS + React + PostgreSQL Development Template",
+      "url": "https://github.com/scottsdevelopment/agentic-nestjs-react-postgres",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2025-09-19T00:40:48Z",
+      "topics": []
+    },
+    {
+      "name": "developer-directory",
+      "description": "",
+      "url": "https://github.com/scottsdevelopment/developer-directory",
+      "homepage": null,
+      "language": "Go",
+      "stars": 0,
+      "pushedAt": "2025-07-12T15:04:56Z",
+      "topics": []
+    },
+    {
+      "name": "gpt-engine",
+      "description": "GptEngine is a modular framework for managing context-rich interactions and dynamic prompts with GPT models, enabling scalable AI applications.",
+      "url": "https://github.com/scottsdevelopment/gpt-engine",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2024-10-24T20:28:55Z",
+      "topics": []
+    },
+    {
+      "name": "bege",
+      "description": "Bad Example, Good Example",
+      "url": "https://github.com/scottsdevelopment/bege",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2026-01-06T03:17:10Z",
+      "topics": []
+    },
+    {
+      "name": "shopify-christmas-theme-demo",
+      "description": "Christmas theme landing page built in hydrogen.",
+      "url": "https://github.com/scottsdevelopment/shopify-christmas-theme-demo",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2025-10-27T18:45:23Z",
+      "topics": []
+    },
+    {
+      "name": "tiktok-to-youtube-automation",
+      "description": "A script to download TikTok clips with metadata and automatically upload them to YouTube Shorts, simplifying the process for creators.",
+      "url": "https://github.com/scottsdevelopment/tiktok-to-youtube-automation",
+      "homepage": null,
+      "language": "Python",
+      "stars": 9,
+      "pushedAt": "2025-08-10T20:13:03Z",
+      "topics": []
+    },
+    {
+      "name": "ng-isbn-validator",
+      "description": "Validate ISBN numbers using Angular, or just the module if you would like.",
+      "url": "https://github.com/scottsdevelopment/ng-isbn-validator",
+      "homepage": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2023-01-07T10:44:20Z",
+      "topics": []
+    },
+    {
+      "name": "scottsdevelopment.com",
+      "description": "Automatically generate a resume based on a data structure.",
+      "url": "https://github.com/scottsdevelopment/scottsdevelopment.com",
+      "homepage": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2026-11-02T14:02:01Z",
+      "topics": []
+    }
+  ]
+}

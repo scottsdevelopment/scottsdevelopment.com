@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Direction B: Trading desk — home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet"><style>:root{--navy:#16263A;--navy2:#1E3249;--line:#2C4260;--bone:#F2EEE6;--bone2:#C9C4BA;--mute:#8A94A6;--brass:#D9A441;--sky:#8CB8D8}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--bone);font:16px/1.55 Archivo,system-ui,sans-serif}
+a{color:var(--sky)}h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.01em}
+.wrap{max-width:76rem;margin:0 auto;padding:0 1.25rem}@media(min-width:640px){.wrap{padding:0 2rem}}
+header{border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center;height:4rem}
+.brand{color:var(--bone);text-decoration:none;font-weight:700;font-stretch:112%;font-size:1.05rem}
+header nav{display:none;gap:1.6rem}header nav a{color:var(--bone2);text-decoration:none;font-size:.92rem}header nav a.cta{color:var(--navy);background:var(--brass);padding:.35rem .9rem;border-radius:4px;font-weight:600}
+@media(min-width:768px){header nav{display:flex;align-items:center}}
+.burger{width:40px;height:40px;border:0;background:none;color:var(--bone)}@media(min-width:768px){.burger{display:none}}
+.hero{padding:3.5rem 0 3rem;border-bottom:1px solid var(--line)}@media(min-width:768px){.hero{padding:5.5rem 0 4rem}}
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1;font-weight:700;font-stretch:105%;max-width:16ch}
+.hero p{color:var(--bone2);font-size:1.15rem;max-width:58ch;margin:1.5rem 0 0}
+.hero .actions{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}.btn{background:var(--brass);color:var(--navy);font-weight:600;text-decoration:none;padding:.75rem 1.3rem;border-radius:4px}.btn.ghost{background:none;color:var(--bone);border:1px solid var(--line)}
+.board{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:3rem}@media(min-width:768px){.board{grid-template-columns:repeat(3,1fr)}}
+.tile{background:var(--navy2);padding:1.4rem}.tile .k{color:var(--mute);font-size:.8rem;letter-spacing:.02em}.tile h3{font-size:1.6rem;margin-top:.3rem}.tile h3 a{color:var(--bone);text-decoration:none}
+.tile .tag{color:var(--sky);margin:.3rem 0 0;font-size:.98rem}.tile p{color:var(--bone2);font-size:.92rem;margin:.8rem 0 0}
+.tile .stack{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem;padding:0;list-style:none}.tile .stack li{border:1px solid var(--line);color:var(--bone2);font-size:.78rem;padding:.15rem .5rem;border-radius:3px}
+section{padding:4rem 0;border-bottom:1px solid var(--line)}@media(min-width:768px){section{padding:5.5rem 0}}
+section h2{font-size:clamp(1.8rem,3vw,2.4rem);font-stretch:105%}section .lede{color:var(--bone2);max-width:62ch;margin:.8rem 0 2rem}
+.grid3{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}@media(min-width:640px){.grid3{grid-template-columns:1fr 1fr}}@media(min-width:1024px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.cell{background:var(--navy);padding:1.3rem}.cell h3{font-size:1.1rem}.cell p{color:var(--bone2);font-size:.92rem;margin:.5rem 0 0}.cell .ev{color:var(--mute);font-size:.82rem;margin-top:.7rem}
+.repos{width:100%;border-collapse:collapse;font-size:.92rem}.repos th{text-align:left;color:var(--mute);font-weight:500;font-size:.8rem;padding:.5rem .8rem;border-bottom:1px solid var(--bone2)}
+.repos td{padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top;color:var(--bone2)}.repos td:first-child a{color:var(--bone);font-weight:600;text-decoration:none}
+.repos tr:nth-child(even) td{background:var(--navy2)}.repos .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.repos th.num{text-align:right}
+.tablewrap{overflow-x:auto;border:1px solid var(--line)}
+.stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-bottom:1.5rem}.stats div{font-variant-numeric:tabular-nums}.stats b{display:block;font-size:2rem;font-weight:700;color:var(--brass);line-height:1}.stats span{color:var(--mute);font-size:.85rem}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--brass)}.timeline li{position:relative;padding:0 0 1.4rem 1.5rem}.timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--navy);border:2px solid var(--brass)}
+.timeline .era{color:var(--brass);font-size:.82rem;font-weight:600}.timeline h3{font-size:1.1rem;margin-top:.1rem}.timeline p{color:var(--bone2);font-size:.92rem;margin:.3rem 0 0;max-width:60ch}
+.hc{list-style:none;padding:0;margin:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}@media(min-width:640px){.hc{grid-template-columns:1fr 1fr}}.hc li{background:var(--navy);padding:1.2rem}.hc h3{font-size:1.05rem}.hc p{color:var(--bone2);font-size:.9rem;margin:.4rem 0 0}
+.slot{border:2px dashed var(--brass);background:rgba(217,164,65,.08);color:#F5D48A;padding:.7rem .9rem;border-radius:4px;font-size:.88rem;margin-bottom:1.2rem}
+.two{display:grid;gap:2rem}@media(min-width:768px){.two{grid-template-columns:1fr 1fr}}
+.care{border:1px solid var(--line);padding:1.5rem}.care h3{font-size:1.3rem}.care ul{color:var(--bone2);font-size:.92rem;padding-left:1.1rem;margin:.8rem 0}.price{font-size:2.2rem;font-weight:700;color:var(--brass);font-variant-numeric:tabular-nums}
+form{display:grid;gap:1rem}label{display:block;font-size:.85rem;color:var(--bone2);margin-bottom:.3rem}input,textarea{width:100%;background:var(--navy2);border:1px solid var(--line);color:var(--bone);padding:.65rem .8rem;border-radius:4px;font:inherit}
+footer{padding:2.5rem 0;color:var(--mute);font-size:.88rem}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}footer a{color:var(--bone2);text-decoration:none;margin-left:1.2rem}
+.offers{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}@media(min-width:768px){.offers{grid-template-columns:repeat(3,1fr)}}
+.offer{background:var(--navy2);padding:1.5rem}.offer h3{font-size:1.3rem}.offer p{color:var(--bone2);font-size:.93rem;margin:.5rem 0 0}.offer ul{padding-left:1.1rem;margin:1rem 0 0;color:var(--bone2);font-size:.9rem}.offer li{margin:.3rem 0}
+.offer .price{margin-top:1rem;font-weight:600;color:#F5D48A;border:1px dashed var(--brass);padding:.4rem .6rem;border-radius:4px;font-size:.95rem}
+</style></head><body>
+<header><div class="wrap"><a class="brand" href="#">SCOTT'S DEVELOPMENT</a><nav><a href="#">Services</a><a href="#">Work</a><a href="#">Code</a><a href="#">Background</a><a href="#">Healthcare</a><a class="cta" href="#">Contact</a></nav><button class="burger" aria-label="Open menu">☰</button></div></header>
+<main>
+<div class="hero"><div class="wrap">
+<h1>One engineer. Fixed scope. Sites and systems that keep working.</h1>
+<p>Scott's Development is a one-person studio in Ferndale, Michigan. I build websites and small software for local businesses, run data-heavy products of my own on lean AWS infrastructure, and look after what I build for a small monthly fee.</p>
+<div class="actions"><a class="btn" href="#">Tell me what you need</a><a class="btn ghost" href="#">See the work</a></div>
+<div class="board"><div class="tile"><div class="k">Service</div><h3><a href="#">A fixed-scope website</a></h3><p class="tag">For a local business that needs a site that loads fast, looks right on a phone and shows up in search.</p><ul class="stack"><li>Design and build, usually 3–6 pages</li><li>Contact form, maps, booking links</li><li>Analytics and Search Console set up</li><li>Launch on AWS with SSL</li></ul><div class="slot" style="margin:1rem 0 0">SLOT: fixed price, owner to confirm</div></div><div class="tile"><div class="k">Service</div><h3><a href="#">A quick technical engagement</a></h3><p class="tag">For a problem that needs an experienced engineer for a few days or weeks, not a hire.</p><ul class="stack"><li>Fix, audit or integrate an existing system</li><li>Data work: scrapers, pipelines, reports</li><li>Automations and small internal tools</li><li>Clear scope and a written summary at the end</li></ul><div class="slot" style="margin:1rem 0 0">SLOT: day or project rate, owner to confirm</div></div><div class="tile"><div class="k">Service</div><h3><a href="#">The care plan</a></h3><p class="tag">For any site I build or take over: it stays hosted, patched and visible.</p><ul class="stack"><li>Hosting on AWS (S3 + CloudFront), SSL, backups</li><li>Dependency and security updates</li><li>Monthly analytics and Search Console report</li><li>Small content and copy changes</li></ul><div class="slot" style="margin:1rem 0 0">SLOT: monthly price, owner to confirm (~$100/mo discussed)</div></div></div>
+</div></div>
+
+<section><div class="wrap"><h2>Work</h2><p class="lede">Described by what it does, not by name.</p>
+<div class="grid3"><div class="cell"><p class="ev" style="margin:0 0 .3rem">Own product</p><h3>Market analytics platform with ML price models</h3><p>Scrapers collect marketplace listings around the clock, Postgres keeps the history, and pricing models turn it into prices people can act on. FastAPI backend, hosted on AWS.</p><p class="ev">FastAPI · PostgreSQL · ML pricing models · Scrapers · AWS</p></div><div class="cell"><p class="ev" style="margin:0 0 .3rem">Own product</p><h3>Static site serving about 30,000 pages</h3><p>A programmatic Next.js site, one page per item, regenerated from a live data feed. Fast to load, pennies to host, indexed by search engines at scale.</p><p class="ev">Next.js · Static export · S3 + CloudFront · Search Console</p></div><div class="cell"><p class="ev" style="margin:0 0 .3rem">Own product</p><h3>Voice and AI companion app</h3><p>A web app, a voice interface, a chat bot, a desktop companion and plugins that all talk to one backend. One product across five surfaces.</p><p class="ev">Web app · Voice · Chat bot · Desktop app · LLM tooling</p></div><div class="cell"><p class="ev" style="margin:0 0 .3rem">Client</p><h3>Local home-cleaning business</h3><p>A fast static website, analytics and local SEO set up so the owner can see where bookings come from. Hosted and looked after on the care plan.</p><p class="ev">Next.js · S3 + CloudFront · GA4 · Local SEO</p></div></div></div></section>
+
+<section><div class="wrap"><h2>What I'm good at</h2><p class="lede">Each area lists the work that proves it.</p>
+<div class="grid3"><div class="cell"><h3>Websites and web applications</h3><p>React and Next.js on the front; FastAPI, NestJS, Django, Laravel or Node on the back; Postgres underneath. Static where possible, dynamic where needed.</p><p class="ev">Shown in: own products, client sites, agentic-nestjs-react-postgres</p></div><div class="cell"><h3>Data pipelines, scrapers and models</h3><p>Collecting messy data on a schedule, keeping history, building models on top. Event-driven ETL with queues when volume calls for it.</p><p class="ev">Shown in: market analytics platform, django-aws-etl</p></div><div class="cell"><h3>AWS hosting that stays cheap</h3><p>S3 and CloudFront for static sites, ECS on Graviton for services, RDS for data, all in Terraform. Small bills, no surprises.</p><p class="ev">Shown in: everything I run</p></div><div class="cell"><h3>Analytics, SEO and pages at scale</h3><p>GA4 and Search Console from day one; sitemaps that cover every page; site structures that let search engines index tens of thousands of pages.</p><p class="ev">Shown in: 30k-page static site, client sites</p></div><div class="cell"><h3>E-commerce platforms</h3><p>Shopify, WooCommerce, BigCommerce, Volusion and Magento: custom plugins, checkout work, REST integrations.</p><p class="ev">Shown in: shopify-christmas-theme-demo, earlier client work</p></div><div class="cell"><h3>LLM tooling and automation</h3><p>Context management, tool calling and session memory around GPT-class models; automation has been a thread since the start.</p><p class="ev">Shown in: companion app, gpt-engine, fhir-summary-gpt</p></div></div></div></section>
+
+<section><div class="wrap"><h2>Public code</h2><p class="lede">Pulled from GitHub at build time. Nothing here is typed in by hand.</p>
+<div class="stats"><div><b>55</b><span>public repos</span></div><div><b>10</b><span>featured</span></div><div><b>9</b><span>stars on featured</span></div><div><b>4</b><span>languages</span></div></div>
+<div class="tablewrap">
+<table class="repos">
+  <thead><tr><th>Repository</th><th class="what">What it is</th><th>Language</th><th class="num">Updated</th><th class="num">Stars</th></tr></thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/scottsdevelopment/django-aws-etl">django-aws-etl</a></td>
+    <td class="what">Event-driven ETL for healthcare CSV drops: S3 event, SQS queue, Celery worker, Postgres.</td>
+    <td>Python</td>
+    <td class="num">Jan 2026</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/fhir-summary-gpt">fhir-summary-gpt</a></td>
+    <td class="what">CLI that turns structured patient data into a readable health summary with an LLM, exported via Pandoc.</td>
+    <td>Python</td>
+    <td class="num">Jul 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/agentic-nestjs-react-postgres">agentic-nestjs-react-postgres</a></td>
+    <td class="what">Docker starter: NestJS and TypeORM API, React front end, Postgres.</td>
+    <td>TypeScript</td>
+    <td class="num">Sep 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/developer-directory">developer-directory</a></td>
+    <td class="what">Developer profile CRUD app: Go (Gin, GORM, SQLite, Swagger) with an Angular front end.</td>
+    <td>Go</td>
+    <td class="num">Jul 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/gpt-engine">gpt-engine</a></td>
+    <td class="what">Session memory, tool orchestration and pluggable providers around GPT-class models.</td>
+    <td>TypeScript</td>
+    <td class="num">Oct 2024</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/bege">bege</a></td>
+    <td class="what">Browser tool for clean, themed code screenshots. Live demo on GitHub Pages.</td>
+    <td>JavaScript</td>
+    <td class="num">Jan 2026</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/shopify-christmas-theme-demo">shopify-christmas-theme-demo</a></td>
+    <td class="what">Holiday storefront on Shopify Hydrogen, React Router 7, TypeScript, Tailwind.</td>
+    <td>TypeScript</td>
+    <td class="num">Oct 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/tiktok-to-youtube-automation">tiktok-to-youtube-automation</a></td>
+    <td class="what">Downloads short clips with metadata and republishes them to another platform.</td>
+    <td>Python</td>
+    <td class="num">Aug 2025</td>
+    <td class="num">9</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/ng-isbn-validator">ng-isbn-validator</a></td>
+    <td class="what">ISBN validation for Angular, usable as a plain module.</td>
+    <td>TypeScript</td>
+    <td class="num">Jan 2023</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/scottsdevelopment.com">scottsdevelopment.com</a></td>
+    <td class="what">This site. Next.js static export on S3 and CloudFront.</td>
+    <td>JavaScript</td>
+    <td class="num">Nov 2026</td>
+    <td class="num">0</td>
+  </tr>
+  </tbody>
+</table></div><p style="margin-top:1rem"><a href="https://github.com/scottsdevelopment">All repositories on GitHub</a></p></div></section>
+
+<section><div class="wrap"><div class="two">
+<div><h2>Background</h2><p class="lede">From AOL and BASIC to healthcare systems and AI agents.</p><div class="slot"><strong>SLOT: career history.</strong> Drafted from Scott’s notes; no dates or employers. He will send final text.</div>
+<ol class="timeline">
+<li><span class="era">Early</span><div><h3>AOL, BASIC and Visual Basic</h3><p>Got curious about computers very young: AOL tooling, BASIC and Visual Basic, and a first taste of how programs could be poked at from outside.</p></div></li><li><span class="era">Early teens</span><div><h3>Game internals, C, C++ and Java</h3><p>Games as the hook for learning C, C++ and Java. Not yet good at memory or data structures; very interested.</p></div></li><li><span class="era">IT</span><div><h3>Computer repair and diagnosis</h3><p>Building machines, diagnosing faults, removing malware, fixing the common problems.</p></div></li><li><span class="era">Web</span><div><h3>PHP, Perl, HTML, WordPress, Linux servers</h3><p>Web forms and sites in the PHP 4 era. First custom jobs. Learned to stand up and run Linux boxes.</p></div></li><li><span class="era">E-commerce</span><div><h3>Stores, plugins and integrations</h3><p>Shopify, Volusion, BigCommerce, WooCommerce. Custom plugins and integrations in PHP, JavaScript, C# and ColdFusion.</p></div></li><li><span class="era">Stacks</span><div><h3>Node.js, Python, Django, Laravel, CRMs</h3><p>Front and back ends across stacks; a long stretch of custom Laravel applications and CRM work. A couple of startup attempts that did not take.</p></div></li><li><span class="era">Public trust</span><div><h3>Healthcare and benefits systems</h3><p>C# and Ruby on Rails work on public-trust systems in Washington, D.C. The start of a healthcare focus.</p></div></li><li><span class="era">Now</span><div><h3>Products, healthcare, AI agents</h3><p>Running my own products alongside a full-time role. Studying ML and economic models. Interested in healthcare quality measurement, digital transformation and in-home care.</p></div></li>
+</ol></div>
+<div><h2>Healthcare</h2><p class="lede">Benefits and patient data systems, and where I want to go next in care.</p><div class="slot"><strong>SLOT: healthcare.</strong> Hidden on the live site until content exists. Generic draft; no names, no compliance claims.</div>
+<ul class="hc">
+<li><h3>Benefits platform modernisation</h3><p>Moved a federal benefits system off legacy infrastructure onto services built with React and Ruby on Rails, with accessibility and federal security requirements throughout.</p></li><li><h3>Patient platform modernisation</h3><p>Zero-downtime modernisation of a patient-facing platform: security audit, SQL performance work in C#/.NET, staged migration to Salesforce.</p></li><li><h3>Claims and quality data</h3><p>Ingestion pipelines for claims files, and an interest in quality measurement programmes (NCQA, HEDIS) and in-home care.</p></li><li><h3>Public code</h3><p>django-aws-etl (claims ingestion pipeline on S3, SQS, Celery) and fhir-summary-gpt (patient health summaries with an LLM).</p></li>
+</ul></div>
+</div></div></section>
+
+<section><div class="wrap"><h2>Tell me what you need</h2><p class="lede">I reply to every message myself.</p><form style="max-width:36rem"><div><label>What's the problem?</label><textarea rows="3"></textarea></div><div><label>Email</label><input type="email"></div><div><a class="btn" href="#">Send message</a></div></form></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Scott's Development LLC · Ferndale, Michigan</span><span><a href="#">scott@scottsdevelopment.com</a><a href="https://github.com/scottsdevelopment">GitHub</a><a href="#">Writing</a></span></div></footer>
+</body></html>

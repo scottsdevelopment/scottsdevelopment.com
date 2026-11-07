@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Direction A: Ledger — home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Inter:wght@400;500&display=swap" rel="stylesheet"><style>:root{--paper:#F5F7F3;--deep:#E9EDE6;--ink:#141A1F;--soft:#3F4A54;--mute:#6B7680;--rule:#D4DAD1;--moss:#0E6B5E;--mossd:#0A5047;--tint:#DCEBE6}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--moss);text-decoration:underline;text-decoration-color:rgba(14,107,94,.4);text-underline-offset:3px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,sans-serif;letter-spacing:-.01em;margin:0}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}@media(min-width:640px){.wrap{padding:0 2rem}}
+header{position:sticky;top:0;border-bottom:1px solid var(--rule);background:rgba(245,247,243,.92);backdrop-filter:blur(6px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.brand{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.1rem;color:var(--ink);text-decoration:none}
+header nav{display:none;gap:1.75rem}header nav a{color:var(--soft);text-decoration:none;font-size:.95rem}
+header nav a.cta{background:var(--ink);color:var(--paper);padding:.35rem 1rem;border-radius:999px}
+@media(min-width:768px){header nav{display:flex;align-items:center}}
+.burger{width:40px;height:40px;border:0;background:none}@media(min-width:768px){.burger{display:none}}
+.hero{padding:3.5rem 0 4rem}@media(min-width:768px){.hero{padding:6rem 0}}
+.hero h1{font-size:clamp(2.6rem,7vw,4.75rem);line-height:1.02;font-weight:600;max-width:14ch}
+.hero .grid{display:grid;gap:2rem;margin-top:2.5rem}@media(min-width:768px){.hero .grid{grid-template-columns:5fr 7fr;gap:3rem}}
+.hero p.lede{font-size:1.2rem;color:var(--soft);max-width:65ch;margin:0}
+.live small{display:block;color:var(--mute);font-size:.9rem}
+.live ul{list-style:none;margin:.5rem 0 0;padding:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.live li{display:grid;gap:.2rem;padding:.9rem 0}.live li+li{border-top:1px solid var(--rule)}
+@media(min-width:640px){.live li{grid-template-columns:11rem 1fr;gap:1.5rem}}
+.live a{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.1rem;color:var(--ink);text-decoration:none}
+.live span{color:var(--soft);font-size:.95rem}
+.actions{margin-top:2.5rem;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.btn{background:var(--ink);color:var(--paper);text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;font-weight:500}
+section{border-top:1px solid var(--rule)}section.white{background:#fff}section.deep{background:var(--deep)}
+section .wrap{display:grid;gap:2rem;padding-top:4rem;padding-bottom:4rem}
+@media(min-width:768px){section .wrap{grid-template-columns:4fr 8fr;gap:3rem;padding-top:6rem;padding-bottom:6rem}}
+section h2{font-size:clamp(1.9rem,3.2vw,2.4rem);line-height:1.1;font-weight:600}
+section .lede{color:var(--soft);font-size:1.05rem;margin:.9rem 0 0;max-width:65ch}
+.ledger{list-style:none;margin:0;padding:0}.ledger>li{padding:1.75rem 0}.ledger>li:first-child{padding-top:0}.ledger>li+li{border-top:1px solid var(--rule)}
+.ledger h3{font-size:1.5rem;font-weight:600}.ledger .kind{float:right;color:var(--mute);font-size:.9rem}
+.ledger .tag{font-weight:500;margin:.2rem 0 0}.ledger p{margin:.6rem 0 0;color:var(--soft);max-width:65ch}
+.stack{display:flex;flex-wrap:wrap;gap:.2rem 1rem;list-style:none;padding:0;margin:.9rem 0 0;color:var(--mute);font-size:.9rem}
+dl{display:grid;gap:2.2rem 2.5rem;margin:0}@media(min-width:640px){dl{grid-template-columns:1fr 1fr}}
+dt{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.2rem}dd{margin:.4rem 0 0;color:var(--soft);font-size:.95rem}dd.ev{color:var(--mute);font-size:.88rem;margin-top:.6rem}
+.repos{width:100%;border-collapse:collapse;font-size:.95rem}.repos th{text-align:left;font-weight:500;color:var(--mute);font-size:.85rem;padding:.4rem 1rem .4rem 0;border-bottom:1px solid rgba(20,26,31,.3)}
+.repos td{padding:.7rem 1rem .7rem 0;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--soft)}.repos td:first-child a{color:var(--ink);font-weight:500;text-decoration:none}
+.repos .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.repos th.num{text-align:right}
+.tablewrap{overflow-x:auto}
+.timeline{list-style:none;margin:0;padding:0}.timeline li{display:grid;gap:.3rem;padding:1.2rem 0;border-top:1px solid var(--rule)}.timeline li:first-child{border-top:0;padding-top:0}
+@media(min-width:640px){.timeline li{grid-template-columns:8rem 1fr;gap:1.5rem}}
+.timeline .era{color:var(--mute);font-size:.9rem;padding-top:.2rem}.timeline h3{font-size:1.1rem;font-weight:600}.timeline p{margin:.3rem 0 0;color:var(--soft);font-size:.95rem;max-width:60ch}
+.hc{list-style:none;margin:0;padding:0}.hc li{padding:1.1rem 0;border-top:1px solid var(--rule)}.hc li:first-child{border-top:0;padding-top:0}.hc h3{font-size:1.1rem}.hc p{margin:.3rem 0 0;color:var(--soft);font-size:.95rem;max-width:60ch}
+.slot{border:2px dashed #C58A1A;background:#FFF7E6;color:#5A3D00;padding:.7rem .9rem;border-radius:6px;font-size:.9rem;margin-bottom:1.25rem}
+.care{display:grid;gap:2rem}@media(min-width:640px){.care{grid-template-columns:1fr auto}}
+.care h3{font-size:1.5rem}.care ul{list-style:none;padding:0;margin:1rem 0 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);max-width:60ch;color:var(--soft);font-size:.95rem}.care li{padding:.6rem 0}.care li+li{border-top:1px solid var(--rule)}
+.price{font-family:"Bricolage Grotesque";font-weight:600;font-size:2rem}
+form{display:grid;gap:1.1rem}label{display:block;font-size:.9rem;font-weight:500;margin-bottom:.3rem}
+input,textarea{width:100%;border:1px solid var(--rule);background:#fff;border-radius:6px;padding:.65rem .8rem;font:inherit}
+.two{display:grid;gap:1.1rem}@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
+footer{background:var(--deep);border-top:1px solid var(--rule);color:var(--soft);font-size:.95rem}footer .wrap{padding:3rem 1.25rem}footer .cols{display:grid;gap:2rem}@media(min-width:768px){footer .cols{grid-template-columns:5fr 3fr 3fr}}
+footer h2{font-size:1rem}footer ul{list-style:none;padding:0;margin:.6rem 0 0}footer li{margin:.3rem 0}footer a{color:var(--soft)}
+.fine{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);color:var(--mute);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.offers{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}@media(min-width:768px){.offers{grid-template-columns:repeat(3,1fr)}}
+.offer{background:#fff;padding:1.5rem}.offer h3{font-size:1.35rem;font-weight:600}.offer p{color:var(--soft);font-size:.95rem;margin:.5rem 0 0}.offer ul{list-style:none;padding:0;margin:1rem 0 0;border-top:1px solid var(--rule);font-size:.92rem;color:var(--soft)}.offer li{padding:.5rem 0;border-bottom:1px solid var(--rule)}
+.offer .price{margin-top:1rem;font-family:"Bricolage Grotesque";font-weight:600;font-size:1.05rem;color:#8A5A00;background:#FFF7E6;border:1px dashed #C58A1A;padding:.4rem .6rem;border-radius:4px}
+</style></head><body><header><div class="wrap"><a class="brand" href="#">Scott's Development</a><nav><a href="#">Work</a><a href="#">Services</a><a href="#">Healthcare</a><a href="#">Writing</a><a href="#">FAQ</a><a class="cta" href="#">Contact</a></nav><button class="burger" aria-label="Open menu">☰</button></div></header>
+<main>
+<div class="hero"><div class="wrap">
+<h1>Websites and small software for local businesses, built to last and cheap to run.</h1>
+<div class="grid">
+<p class="lede">I'm Scott, a full-stack engineer in Ferndale, Michigan. Alongside my day job I build sites and systems for small businesses, host them on AWS for very little, and send a monthly note on how they're doing.</p>
+<div class="live"><small>What I do</small><ul><li><a href="#">A fixed-scope website</a><span>For a local business that needs a site that loads fast, looks right on a phone and shows up in search.</span></li><li><a href="#">A quick technical engagement</a><span>For a problem that needs an experienced engineer for a few days or weeks, not a hire.</span></li><li><a href="#">The care plan</a><span>For any site I build or take over: it stays hosted, patched and visible.</span></li></ul></div>
+</div>
+<div class="actions"><a class="btn" href="#">Tell me what you need</a><a href="#">See the work</a></div>
+</div></div>
+
+<section class="" ><div class="wrap"><div><h2>Three ways to work with me</h2><p class="lede">Small, fixed and clear. No retainers you don’t understand.</p></div><div>
+<div class="offers">
+<div class="offer"><h3>A fixed-scope website</h3><p>For a local business that needs a site that loads fast, looks right on a phone and shows up in search.</p><ul><li>Design and build, usually 3–6 pages</li><li>Contact form, maps, booking links</li><li>Analytics and Search Console set up</li><li>Launch on AWS with SSL</li></ul><div class="price">SLOT: fixed price, owner to confirm</div></div><div class="offer"><h3>A quick technical engagement</h3><p>For a problem that needs an experienced engineer for a few days or weeks, not a hire.</p><ul><li>Fix, audit or integrate an existing system</li><li>Data work: scrapers, pipelines, reports</li><li>Automations and small internal tools</li><li>Clear scope and a written summary at the end</li></ul><div class="price">SLOT: day or project rate, owner to confirm</div></div><div class="offer"><h3>The care plan</h3><p>For any site I build or take over: it stays hosted, patched and visible.</p><ul><li>Hosting on AWS (S3 + CloudFront), SSL, backups</li><li>Dependency and security updates</li><li>Monthly analytics and Search Console report</li><li>Small content and copy changes</li></ul><div class="price">SLOT: monthly price, owner to confirm (~$100/mo discussed)</div></div>
+</div></div></div></section>
+<section class="white" ><div class="wrap"><div><h2>Work</h2><p class="lede">My own products and client builds, described by what they do rather than by name. I keep those audiences separate from this one.</p></div><div>
+<ul class="ledger"><li><span class="kind">Own product</span><h3>Market analytics platform with ML price models</h3><p>Scrapers collect marketplace listings around the clock, Postgres keeps the history, and pricing models turn it into prices people can act on. FastAPI backend, hosted on AWS.</p><ul class="stack"><li>FastAPI</li><li>PostgreSQL</li><li>ML pricing models</li><li>Scrapers</li><li>AWS</li></ul></li><li><span class="kind">Own product</span><h3>Static site serving about 30,000 pages</h3><p>A programmatic Next.js site, one page per item, regenerated from a live data feed. Fast to load, pennies to host, indexed by search engines at scale.</p><ul class="stack"><li>Next.js</li><li>Static export</li><li>S3 + CloudFront</li><li>Search Console</li></ul></li><li><span class="kind">Own product</span><h3>Voice and AI companion app</h3><p>A web app, a voice interface, a chat bot, a desktop companion and plugins that all talk to one backend. One product across five surfaces.</p><ul class="stack"><li>Web app</li><li>Voice</li><li>Chat bot</li><li>Desktop app</li><li>LLM tooling</li></ul></li><li><span class="kind">Client</span><h3>Local home-cleaning business</h3><p>A fast static website, analytics and local SEO set up so the owner can see where bookings come from. Hosted and looked after on the care plan.</p><ul class="stack"><li>Next.js</li><li>S3 + CloudFront</li><li>GA4</li><li>Local SEO</li></ul></li></ul></div></div></section>
+<section class="" ><div class="wrap"><div><h2>What I'm good at</h2><p class="lede">Each area lists the work that shows it, so you can check the claim instead of taking my word for it.</p></div><div><dl><div><dt>Websites and web applications</dt><dd>React and Next.js on the front; FastAPI, NestJS, Django, Laravel or Node on the back; Postgres underneath. Static where possible, dynamic where needed.</dd><dd class="ev">Shown in: own products, client sites, agentic-nestjs-react-postgres</dd></div><div><dt>Data pipelines, scrapers and models</dt><dd>Collecting messy data on a schedule, keeping history, building models on top. Event-driven ETL with queues when volume calls for it.</dd><dd class="ev">Shown in: market analytics platform, django-aws-etl</dd></div><div><dt>AWS hosting that stays cheap</dt><dd>S3 and CloudFront for static sites, ECS on Graviton for services, RDS for data, all in Terraform. Small bills, no surprises.</dd><dd class="ev">Shown in: everything I run</dd></div><div><dt>Analytics, SEO and pages at scale</dt><dd>GA4 and Search Console from day one; sitemaps that cover every page; site structures that let search engines index tens of thousands of pages.</dd><dd class="ev">Shown in: 30k-page static site, client sites</dd></div><div><dt>E-commerce platforms</dt><dd>Shopify, WooCommerce, BigCommerce, Volusion and Magento: custom plugins, checkout work, REST integrations.</dd><dd class="ev">Shown in: shopify-christmas-theme-demo, earlier client work</dd></div><div><dt>LLM tooling and automation</dt><dd>Context management, tool calling and session memory around GPT-class models; automation has been a thread since the start.</dd><dd class="ev">Shown in: companion app, gpt-engine, fhir-summary-gpt</dd></div></dl></div></div></section>
+<section class="deep" ><div class="wrap"><div><h2>Public code</h2><p class="lede">55 public repositories on <a href="https://github.com/scottsdevelopment">GitHub</a>. These are the ones worth your time. Stars and dates come from GitHub, not typed in.</p></div><div><div class="tablewrap">
+<table class="repos">
+  <thead><tr><th>Repository</th><th class="what">What it is</th><th>Language</th><th class="num">Updated</th><th class="num">Stars</th></tr></thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/scottsdevelopment/django-aws-etl">django-aws-etl</a></td>
+    <td class="what">Event-driven ETL for healthcare CSV drops: S3 event, SQS queue, Celery worker, Postgres.</td>
+    <td>Python</td>
+    <td class="num">Jan 2026</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/fhir-summary-gpt">fhir-summary-gpt</a></td>
+    <td class="what">CLI that turns structured patient data into a readable health summary with an LLM, exported via Pandoc.</td>
+    <td>Python</td>
+    <td class="num">Jul 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/agentic-nestjs-react-postgres">agentic-nestjs-react-postgres</a></td>
+    <td class="what">Docker starter: NestJS and TypeORM API, React front end, Postgres.</td>
+    <td>TypeScript</td>
+    <td class="num">Sep 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/developer-directory">developer-directory</a></td>
+    <td class="what">Developer profile CRUD app: Go (Gin, GORM, SQLite, Swagger) with an Angular front end.</td>
+    <td>Go</td>
+    <td class="num">Jul 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/gpt-engine">gpt-engine</a></td>
+    <td class="what">Session memory, tool orchestration and pluggable providers around GPT-class models.</td>
+    <td>TypeScript</td>
+    <td class="num">Oct 2024</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/bege">bege</a></td>
+    <td class="what">Browser tool for clean, themed code screenshots. Live demo on GitHub Pages.</td>
+    <td>JavaScript</td>
+    <td class="num">Jan 2026</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/shopify-christmas-theme-demo">shopify-christmas-theme-demo</a></td>
+    <td class="what">Holiday storefront on Shopify Hydrogen, React Router 7, TypeScript, Tailwind.</td>
+    <td>TypeScript</td>
+    <td class="num">Oct 2025</td>
+    <td class="num">0</td>
+  </tr><tr>
+    <td><a href="https://github.com/scottsdevelopment/tiktok-to-youtube-automation">tiktok-to-youtube-automation</a></td>
+    <td class="what">Downloads short clips with metadata and republishes them to another platform.</td>
+    <td>Python</td>
+    <td class="num">Aug 2025</td>
+    <td class="num">9</td>
+  </tr>
+  </tbody>
+</table></div><p><a href="https://github.com/scottsdevelopment">Everything else on GitHub</a></p></div></div></section>
+<section class="white" ><div class="wrap"><div><h2>Background</h2><p class="lede">How I got here, in order. Short on purpose.</p></div><div><div class="slot"><strong>SLOT: career history.</strong> Drafted from Scott’s notes; no dates or employers shown. He will send the final text.</div>
+<ol class="timeline">
+<li><span class="era">Early</span><div><h3>AOL, BASIC and Visual Basic</h3><p>Got curious about computers very young: AOL tooling, BASIC and Visual Basic, and a first taste of how programs could be poked at from outside.</p></div></li><li><span class="era">Early teens</span><div><h3>Game internals, C, C++ and Java</h3><p>Games as the hook for learning C, C++ and Java. Not yet good at memory or data structures; very interested.</p></div></li><li><span class="era">IT</span><div><h3>Computer repair and diagnosis</h3><p>Building machines, diagnosing faults, removing malware, fixing the common problems.</p></div></li><li><span class="era">Web</span><div><h3>PHP, Perl, HTML, WordPress, Linux servers</h3><p>Web forms and sites in the PHP 4 era. First custom jobs. Learned to stand up and run Linux boxes.</p></div></li><li><span class="era">E-commerce</span><div><h3>Stores, plugins and integrations</h3><p>Shopify, Volusion, BigCommerce, WooCommerce. Custom plugins and integrations in PHP, JavaScript, C# and ColdFusion.</p></div></li><li><span class="era">Stacks</span><div><h3>Node.js, Python, Django, Laravel, CRMs</h3><p>Front and back ends across stacks; a long stretch of custom Laravel applications and CRM work. A couple of startup attempts that did not take.</p></div></li><li><span class="era">Public trust</span><div><h3>Healthcare and benefits systems</h3><p>C# and Ruby on Rails work on public-trust systems in Washington, D.C. The start of a healthcare focus.</p></div></li><li><span class="era">Now</span><div><h3>Products, healthcare, AI agents</h3><p>Running my own products alongside a full-time role. Studying ML and economic models. Interested in healthcare quality measurement, digital transformation and in-home care.</p></div></li>
+</ol></div></div></section>
+<section class="" id="healthcare"><div class="wrap"><div><h2>Work in healthcare</h2><p class="lede">Systems that move patient, claims and benefits data between organisations, and tools that help people read it.</p></div><div><div class="slot"><strong>SLOT: healthcare.</strong> Hidden on the live site until content exists. Generic draft; no employer names, no compliance claims.</div>
+<ul class="hc">
+<li><h3>Benefits platform modernisation</h3><p>Moved a federal benefits system off legacy infrastructure onto services built with React and Ruby on Rails, with accessibility and federal security requirements throughout.</p></li><li><h3>Patient platform modernisation</h3><p>Zero-downtime modernisation of a patient-facing platform: security audit, SQL performance work in C#/.NET, staged migration to Salesforce.</p></li><li><h3>Claims and quality data</h3><p>Ingestion pipelines for claims files, and an interest in quality measurement programmes (NCQA, HEDIS) and in-home care.</p></li><li><h3>Public code</h3><p>django-aws-etl (claims ingestion pipeline on S3, SQS, Celery) and fhir-summary-gpt (patient health summaries with an LLM).</p></li>
+</ul></div></div></section>
+<section class="white" ><div class="wrap"><div><h2>Tell me what you need</h2><p class="lede">A new site, something broken, a data problem, or just hosting. I reply to every message myself.</p></div><div><form><div><label>What's the problem you want solved?</label><textarea rows="3"></textarea></div><div class="two"><div><label>Name</label><input></div><div><label>Email</label><input type="email"></div></div><div><label>Anything else: timeline, budget, links</label><textarea rows="4"></textarea></div><div><a class="btn" href="#">Send message</a></div></form></div></div></section>
+</main><footer><div class="wrap"><div class="cols">
+<div><strong>Scott's Development</strong><p>Websites, small software and cheap-to-run hosting for local businesses, built by one engineer in Ferndale, Michigan.</p><a href="#">scott@scottsdevelopment.com</a><br><a href="https://github.com/scottsdevelopment">github.com/scottsdevelopment</a></div>
+<div><h2>Services</h2><ul><li><a href="#">Fixed-scope websites</a></li><li><a href="#">Technical engagements</a></li><li><a href="#">Care plan</a></li></ul></div>
+<div><h2>Site</h2><ul><li><a href="#">Work</a></li><li><a href="#">Writing</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li></ul></div>
+</div><div class="fine"><span>© 2026 Scott's Development LLC</span><span>Ferndale, Michigan. Remote-friendly.</span></div></div></footer></body></html>

@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-feature-settings: 'kern', 'liga', 'calt';
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.moss.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: theme('colors.moss.tint');
+    color: theme('colors.ink.DEFAULT');
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Ruled list: rows separated by hairlines, used wherever content is tabular. */
+  .ledger > * + * {
+    border-top: 1px solid theme('colors.rule');
+  }
+
+  .link {
+    @apply text-moss underline decoration-moss/40 underline-offset-[3px] transition-colors hover:text-moss-deep hover:decoration-moss-deep;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
